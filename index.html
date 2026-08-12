@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lucrei Contabilidade: BPO Financeiro e apoio contábil consultivo para empresas que precisam de mais clareza, controle e previsibilidade."
+    />
+    <title>Lucrei Contabilidade | BPO Financeiro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --gold: #c9a84c;
+        --green: #3d6b4f;
+        --gray: #ededed;
+        --blue: #152a47;
+        --beige: #e7decd;
+        --warm-white: #faf9f6;
+        --ink: #1f2924;
+      }
+
+      html {
+        scroll-padding-top: 96px;
+      }
+
+      body {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--warm-white);
+      }
+
+      .section-shell {
+        width: min(1120px, calc(100% - 32px));
+        margin-inline: auto;
+      }
+
+      .hero-shell {
+        width: min(1288px, calc(100% - 32px));
+        margin-inline: auto;
+      }
+
+      .soft-shadow {
+        box-shadow: 0 24px 80px rgba(21, 42, 71, 0.1);
+      }
+
+      .subtle-grid {
+        background-image:
+          linear-gradient(rgba(61, 107, 79, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(61, 107, 79, 0.06) 1px, transparent 1px);
+        background-size: 44px 44px;
+      }
+
+      .hero-depth {
+        background-image:
+          linear-gradient(rgba(61, 107, 79, 0.048) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(61, 107, 79, 0.048) 1px, transparent 1px),
+          linear-gradient(135deg, #faf9f6 0%, #faf9f6 46%, rgba(237, 237, 237, 0.72) 76%, rgba(231, 222, 205, 0.48) 100%);
+        background-size: 44px 44px, 44px 44px, 100% 100%;
+      }
+
+      .context-depth {
+        background:
+          radial-gradient(circle at 86% 12%, rgba(21, 42, 71, 0.06), transparent 28%),
+          linear-gradient(180deg, #faf9f6 0%, #f5f1ea 46%, #ededed 100%);
+      }
+
+      .hero-kicker {
+        border-color: rgba(201, 168, 76, 0.38);
+        background: linear-gradient(135deg, rgba(250, 249, 246, 0.95), rgba(231, 222, 205, 0.74));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 14px 34px rgba(21, 42, 71, 0.07);
+        transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+      }
+
+      .hero-kicker:hover {
+        border-color: rgba(201, 168, 76, 0.58);
+        background: linear-gradient(135deg, rgba(250, 249, 246, 1), rgba(231, 222, 205, 0.86));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78), 0 16px 38px rgba(21, 42, 71, 0.09);
+      }
+
+      .hero-button {
+        transition:
+          transform 230ms cubic-bezier(0.22, 1, 0.36, 1),
+          background-color 230ms ease,
+          border-color 230ms ease,
+          color 230ms ease,
+          box-shadow 230ms ease;
+      }
+
+      .hero-button:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero-button-institutional:hover {
+        box-shadow: 0 20px 48px rgba(21, 42, 71, 0.22);
+      }
+
+      .hero-button-primary:hover {
+        box-shadow: 0 20px 48px rgba(61, 107, 79, 0.24);
+      }
+
+      .hero-sequence .hero-kicker,
+      .hero-sequence .hero-title,
+      .hero-sequence .hero-copy,
+      .hero-sequence .hero-actions {
+        opacity: 0;
+        transform: translateY(14px);
+        animation: heroFadeUp 560ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+
+      .hero-sequence .hero-title {
+        animation-delay: 90ms;
+      }
+
+      .hero-sequence .hero-copy {
+        animation-delay: 170ms;
+      }
+
+      .hero-sequence .hero-actions {
+        animation-delay: 250ms;
+      }
+
+      .hero-sequence .hero-media {
+        opacity: 0;
+        transform: translateY(10px) scale(0.985);
+        animation: heroMediaIn 680ms cubic-bezier(0.22, 1, 0.36, 1) 150ms forwards;
+      }
+
+      @keyframes heroFadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes heroMediaIn {
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .dark-grid {
+        background-image:
+          linear-gradient(rgba(250, 249, 246, 0.055) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(250, 249, 246, 0.055) 1px, transparent 1px);
+        background-size: 42px 42px;
+      }
+
+      .bpo-depth {
+        position: relative;
+        background:
+          linear-gradient(180deg, rgba(250, 249, 246, 0.12) 0%, rgba(250, 249, 246, 0) 7%),
+          radial-gradient(circle at 82% 18%, rgba(201, 168, 76, 0.09), transparent 26%),
+          radial-gradient(circle at 10% 82%, rgba(61, 107, 79, 0.08), transparent 34%),
+          linear-gradient(180deg, #162d4c 0%, #102743 48%, #0b1a30 100%);
+      }
+
+      .bpo-depth::after {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        bottom: 0;
+        height: 84px;
+        background: linear-gradient(180deg, rgba(13, 28, 51, 0), #faf9f6);
+        pointer-events: none;
+      }
+
+      .bpo-depth > .section-shell {
+        position: relative;
+        z-index: 1;
+      }
+
+      .light-depth {
+        background: linear-gradient(180deg, #faf9f6 0%, #f4f1eb 48%, #ededed 100%);
+      }
+
+      .warm-depth {
+        background: linear-gradient(180deg, #ededed 0%, #f6f2ea 46%, #faf9f6 100%);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 650ms ease, transform 650ms ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .stagger > .reveal:nth-child(2) {
+        transition-delay: 80ms;
+      }
+
+      .stagger > .reveal:nth-child(3) {
+        transition-delay: 140ms;
+      }
+
+      .stagger > .reveal:nth-child(4) {
+        transition-delay: 200ms;
+      }
+
+      .stagger > .reveal:nth-child(5) {
+        transition-delay: 260ms;
+      }
+
+      .stagger > .reveal:nth-child(6) {
+        transition-delay: 320ms;
+      }
+
+      .stagger > .reveal:nth-child(7) {
+        transition-delay: 380ms;
+      }
+
+      .stagger > .reveal:nth-child(8) {
+        transition-delay: 440ms;
+      }
+
+      .interactive-card {
+        transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+      }
+
+      .interactive-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(201, 168, 76, 0.42);
+        box-shadow: 0 18px 48px rgba(21, 42, 71, 0.12);
+      }
+
+      .context-sequence .context-title.reveal,
+      .context-sequence .context-copy.reveal,
+      .context-sequence .context-card.reveal {
+        transform: translateY(18px);
+        transition:
+          opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+          transform 620ms cubic-bezier(0.22, 1, 0.36, 1),
+          border-color 240ms ease,
+          box-shadow 240ms ease,
+          background-color 240ms ease;
+      }
+
+      .context-sequence .context-copy.reveal {
+        transition-delay: 90ms;
+      }
+
+      .context-sequence .context-card.reveal:nth-child(1) {
+        transition-delay: 150ms;
+      }
+
+      .context-sequence .context-card.reveal:nth-child(2) {
+        transition-delay: 220ms;
+      }
+
+      .context-sequence .context-card.reveal:nth-child(3) {
+        transition-delay: 290ms;
+      }
+
+      .context-sequence .context-card.reveal:nth-child(4) {
+        transition-delay: 360ms;
+      }
+
+      .context-sequence .context-card.reveal.is-visible:hover {
+        transform: translateY(-3px);
+        border-color: rgba(201, 168, 76, 0.34);
+        box-shadow: 0 20px 46px rgba(21, 42, 71, 0.1);
+        transition-delay: 0ms;
+      }
+
+      .bpo-sequence .bpo-title.reveal,
+      .bpo-sequence .bpo-copy.reveal,
+      .bpo-sequence .bpo-highlight.reveal,
+      .bpo-sequence .bpo-label.reveal,
+      .bpo-sequence .bpo-card.reveal,
+      .bpo-sequence .bpo-action.reveal {
+        transform: translateY(18px);
+        transition:
+          opacity 640ms cubic-bezier(0.22, 1, 0.36, 1),
+          transform 640ms cubic-bezier(0.22, 1, 0.36, 1),
+          border-color 240ms ease,
+          box-shadow 240ms ease,
+          background-color 240ms ease;
+      }
+
+      .bpo-sequence .bpo-copy.reveal {
+        transition-delay: 80ms;
+      }
+
+      .bpo-sequence .bpo-highlights .bpo-highlight:nth-child(1) {
+        transition-delay: 150ms;
+      }
+
+      .bpo-sequence .bpo-highlights .bpo-highlight:nth-child(2) {
+        transition-delay: 210ms;
+      }
+
+      .bpo-sequence .bpo-highlights .bpo-highlight:nth-child(3) {
+        transition-delay: 270ms;
+      }
+
+      .bpo-sequence .bpo-label.reveal {
+        transition-delay: 310ms;
+      }
+
+      .bpo-sequence .bpo-services .bpo-card:nth-child(1) {
+        transition-delay: 360ms;
+      }
+
+      .bpo-sequence .bpo-services .bpo-card:nth-child(2) {
+        transition-delay: 410ms;
+      }
+
+      .bpo-sequence .bpo-services .bpo-card:nth-child(3) {
+        transition-delay: 460ms;
+      }
+
+      .bpo-sequence .bpo-services .bpo-card:nth-child(4) {
+        transition-delay: 510ms;
+      }
+
+      .bpo-sequence .bpo-services .bpo-card:nth-child(5) {
+        transition-delay: 560ms;
+      }
+
+      .bpo-sequence .bpo-services .bpo-card:nth-child(6) {
+        transition-delay: 610ms;
+      }
+
+      .bpo-sequence .bpo-action.reveal {
+        transition-delay: 680ms;
+      }
+
+      .bpo-sequence .bpo-card.reveal.is-visible:hover {
+        transform: translateY(-4px);
+        border-color: rgba(201, 168, 76, 0.28);
+        box-shadow: 0 22px 54px rgba(3, 10, 22, 0.18);
+        transition-delay: 0ms;
+      }
+
+      .soft-hover {
+        transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+      }
+
+      .soft-hover:hover {
+        transform: translateY(-3px);
+        border-color: rgba(201, 168, 76, 0.32);
+        box-shadow: 0 18px 44px rgba(21, 42, 71, 0.1);
+      }
+
+      .button-lift {
+        transition: transform 220ms ease, background-color 220ms ease, border-color 220ms ease, color 220ms ease, box-shadow 220ms ease;
+      }
+
+      .button-lift:hover {
+        transform: translateY(-2px);
+      }
+
+      .focus-ring:focus-visible {
+        outline: 3px solid rgba(201, 168, 76, 0.55);
+        outline-offset: 3px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-sequence .hero-kicker,
+        .hero-sequence .hero-title,
+        .hero-sequence .hero-copy,
+        .hero-sequence .hero-actions,
+        .hero-sequence .hero-media {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
+
+        .context-sequence .context-title.reveal,
+        .context-sequence .context-copy.reveal,
+        .context-sequence .context-card.reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+
+        .bpo-sequence .bpo-title.reveal,
+        .bpo-sequence .bpo-copy.reveal,
+        .bpo-sequence .bpo-highlight.reveal,
+        .bpo-sequence .bpo-label.reveal,
+        .bpo-sequence .bpo-card.reveal,
+        .bpo-sequence .bpo-action.reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="antialiased">
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-[#3D6B4F]/10 bg-[#FAF9F6]/94 backdrop-blur">
+      <div class="section-shell flex h-20 items-center justify-between">
+        <a href="#topo" class="flex items-center" aria-label="Voltar ao topo">
+          <img
+            src="assets/lucrei-logo-horizontal.png"
+            alt="Lucrei Contabilidade"
+            class="h-10 w-auto max-w-[154px] object-contain"
+          />
+        </a>
+
+        <nav class="hidden items-center gap-6 text-sm text-[#1F2924]/70 lg:flex" aria-label="Navegação principal">
+          <a class="transition hover:text-[#3D6B4F]" href="#contexto">Contexto</a>
+          <a class="transition hover:text-[#3D6B4F]" href="#bpo">BPO</a>
+          <a class="transition hover:text-[#3D6B4F]" href="#beneficios">Benefícios</a>
+          <a class="transition hover:text-[#3D6B4F]" href="#lucrei">Lucrei</a>
+          <a class="transition hover:text-[#3D6B4F]" href="#servicos">Serviços</a>
+          <a class="transition hover:text-[#3D6B4F]" href="#faq">FAQ</a>
+        </nav>
+
+        <a
+          href="#contato"
+          data-whatsapp-placeholder
+          class="hidden rounded-md border border-[#3D6B4F]/20 px-5 py-3 text-sm font-medium text-[#3D6B4F] transition hover:border-[#3D6B4F] hover:bg-[#3D6B4F] hover:text-[#FAF9F6] lg:inline-flex"
+        >
+          WhatsApp
+        </a>
+
+        <button
+          id="menuButton"
+          class="grid h-11 w-11 place-items-center rounded-md border border-[#3D6B4F]/15 lg:hidden"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span class="flex w-5 flex-col gap-1.5">
+            <span class="h-px w-full bg-[#3D6B4F]"></span>
+            <span class="h-px w-full bg-[#3D6B4F]"></span>
+            <span class="h-px w-full bg-[#3D6B4F]"></span>
+          </span>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="hidden border-t border-[#3D6B4F]/10 bg-[#FAF9F6] lg:hidden">
+        <nav class="section-shell flex flex-col gap-1 py-4 text-sm text-[#1F2924]/75" aria-label="Menu mobile">
+          <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#contexto">Contexto</a>
+          <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#bpo">BPO Financeiro</a>
+          <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#beneficios">Benefícios</a>
+          <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#lucrei">Quem é a Lucrei</a>
+          <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#servicos">Serviços</a>
+          <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#faq">Perguntas frequentes</a>
+          <a class="rounded-md px-3 py-3 font-medium text-[#3D6B4F] hover:bg-[#E7DECD]" href="#contato" data-whatsapp-placeholder>
+            WhatsApp
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="topo">
+      <section class="hero-depth hero-sequence overflow-hidden bg-[#FAF9F6] pb-16 pt-20 md:pb-20 md:pt-24">
+        <div class="hero-shell grid items-center gap-10 lg:min-h-[calc(100vh-112px)] lg:grid-cols-[1.16fr_0.84fr] lg:gap-7 xl:gap-9">
+          <div class="max-w-[790px]">
+            <p class="hero-kicker mb-5 inline-flex rounded-full border px-[1.05rem] py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-[#3D6B4F]">
+              BPO FINANCEIRO COMO FRENTE PRINCIPAL
+            </p>
+            <h1 class="hero-title max-w-[790px] text-4xl font-semibold leading-[1.02] text-[#152A47] md:text-[3.15rem] xl:text-[3.38rem]">
+              <span class="block">Sua empresa vende.</span>
+              <span class="block">E o seu financeiro ainda</span>
+              <span class="block">depende de você?</span>
+            </h1>
+            <p class="hero-copy mt-6 max-w-[720px] text-lg font-semibold leading-8 text-[#1F2924]/78 md:text-xl md:leading-9">
+              Com contabilidade consultiva e BPO Financeiro, a Lucrei apoia empresas que precisam organizar o financeiro e ganhar mais clareza sobre a operação.
+            </p>
+
+            <div class="hero-actions mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
+              <a
+                href="#bpo"
+                class="hero-button hero-button-primary focus-ring inline-flex w-full items-center justify-center rounded-full bg-[#3D6B4F] px-9 py-[1.05rem] text-sm font-semibold text-[#FAF9F6] shadow-[0_18px_42px_rgba(61,107,79,0.2)] ring-1 ring-[#C9A84C]/20 hover:bg-[#315940] sm:w-auto sm:min-w-[286px]"
+              >
+                Quero organizar meu financeiro
+              </a>
+              <a
+                href="#servicos"
+                class="hero-button hero-button-institutional focus-ring inline-flex w-full items-center justify-center rounded-full bg-[#152A47] px-9 py-[1.05rem] text-sm font-semibold text-[#FAF9F6] shadow-[0_18px_42px_rgba(21,42,71,0.18)] ring-1 ring-[#C9A84C]/24 hover:bg-[#1D365A] sm:w-auto sm:min-w-[250px]"
+              >
+                Preciso de uma contabilidade
+              </a>
+            </div>
+
+            <div class="hero-actions mt-8 grid gap-3 text-sm font-semibold text-[#152A47] sm:grid-cols-3">
+              <span class="rounded-lg border border-[#3D6B4F]/12 bg-[#FAF9F6]/76 px-4 py-4 shadow-[0_14px_34px_rgba(21,42,71,0.06)]">Entenda o que entra e o que sai</span>
+              <span class="rounded-lg border border-[#C9A84C]/24 bg-[#E7DECD]/46 px-4 py-4 shadow-[0_14px_34px_rgba(21,42,71,0.06)]">Pare de decidir só pelo saldo da conta</span>
+              <span class="rounded-lg border border-[#3D6B4F]/12 bg-[#EEF4F0] px-4 py-4 shadow-[0_14px_34px_rgba(21,42,71,0.06)]">Tenha uma rotina financeira acompanhada</span>
+            </div>
+          </div>
+
+          <div class="hero-media lg:-mr-14 lg:mt-24 xl:-mr-24 xl:mt-28">
+            <img
+              src="assets/hero-lucrei-recepcao-premium.jpg"
+              alt="Recepção premium da Lucrei Contabilidade com identidade visual aplicada em um ambiente corporativo elegante."
+              class="h-[320px] w-full rounded-lg object-cover object-center shadow-[0_24px_70px_rgba(21,42,71,0.14)] sm:h-[380px] md:h-[450px] lg:h-[430px] xl:h-[450px]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="contexto" class="context-depth context-sequence py-24 md:py-32 lg:flex lg:min-h-[740px] lg:items-center xl:min-h-[780px]">
+        <div class="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+          <div class="lg:pr-6">
+            <p class="text-xs font-semibold uppercase text-[#3D6B4F]">Problema / cenário</p>
+            <h2 class="context-title reveal mt-4 max-w-xl text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
+              Quando a empresa cresce, o financeiro não pode continuar no improviso.
+            </h2>
+            <p class="context-copy reveal mt-6 max-w-xl text-base leading-8 text-[#1F2924]/72">
+              Muitas empresas seguem vendendo e operando, mas sem a clareza necessária para manter controle real da rotina financeira.
+            </p>
+          </div>
+
+          <div class="grid items-stretch gap-5 md:grid-cols-2">
+            <article class="context-card reveal interactive-card flex min-h-[190px] flex-col rounded-lg border border-[#C9A84C]/32 bg-[#F2E9DA] p-6 shadow-[0_20px_46px_rgba(21,42,71,0.08)]">
+              <span class="block h-1 w-14 rounded bg-[#C9A84C]"></span>
+              <h3 class="mt-5 text-xl font-semibold text-[#152A47]">Pouca clareza sobre o caixa</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/66">
+                Entradas e saídas sem visão real do mês.
+              </p>
+            </article>
+            <article class="context-card reveal interactive-card flex min-h-[190px] flex-col rounded-lg border border-[#152A47]/16 bg-[#F1F3F2] p-6 shadow-[0_20px_46px_rgba(21,42,71,0.08)]">
+              <span class="block h-1 w-14 rounded bg-[#3D6B4F]"></span>
+              <h3 class="mt-5 text-xl font-semibold text-[#152A47]">Decisões no improviso</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/66">
+                A empresa decide sem contexto confiável.
+              </p>
+            </article>
+            <article class="context-card reveal interactive-card flex min-h-[190px] flex-col rounded-lg border border-[#3D6B4F]/22 bg-[#E8F1EC] p-6 shadow-[0_20px_46px_rgba(21,42,71,0.08)]">
+              <span class="block h-1 w-14 rounded bg-[#152A47]"></span>
+              <h3 class="mt-5 text-xl font-semibold text-[#152A47]">Centralização no dono</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/66">
+                Tudo passa pelo empresário.
+              </p>
+            </article>
+            <article class="context-card reveal interactive-card flex min-h-[190px] flex-col rounded-lg border border-[#152A47]/18 bg-[#E8EEF4] p-6 shadow-[0_20px_46px_rgba(21,42,71,0.08)]">
+              <span class="block h-1 w-14 rounded bg-[#C9A84C]"></span>
+              <h3 class="mt-5 text-xl font-semibold text-[#152A47]">Rotina sem método</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/66">
+                O financeiro só recebe atenção na urgência.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="bpo" class="bpo-depth bpo-sequence overflow-hidden py-20 text-[#FAF9F6] md:py-24">
+        <div class="section-shell">
+          <div class="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-end lg:gap-14">
+            <div>
+              <h2 class="bpo-title reveal text-4xl font-semibold leading-tight md:text-6xl">
+                BPO Financeiro:
+              </h2>
+            </div>
+
+            <div class="lg:pb-1">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#C9A84C]">3 diferenças na sua empresa</p>
+              <div class="bpo-highlights mt-4 grid gap-3 text-sm font-semibold text-[#FAF9F6]/84">
+                <span class="bpo-highlight reveal rounded-lg border border-[#FAF9F6]/10 bg-[#FAF9F6]/7 px-5 py-4">Tira o financeiro das costas do dono</span>
+                <span class="bpo-highlight reveal rounded-lg border border-[#C9A84C]/22 bg-[#FAF9F6]/8 px-5 py-4">Para de decidir só pelo saldo da conta</span>
+                <span class="bpo-highlight reveal rounded-lg border border-[#FAF9F6]/10 bg-[#FAF9F6]/7 px-5 py-4">Dá mais visão do que realmente sobra no mês</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bpo-label reveal mt-12">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#C9A84C]">O que entra no BPO</p>
+          </div>
+
+          <div class="bpo-services mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#FAF9F6]/10 bg-[#1B3656]/78 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#213E61]/82">
+              <span class="text-xs font-semibold text-[#C9A84C]">01</span>
+              <h3 class="mt-5 text-xl font-semibold">Contas a pagar e receber</h3>
+              <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
+                Vencimentos, recebimentos e compromissos em uma rotina mais clara.
+              </p>
+            </article>
+            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#FAF9F6]/10 bg-[#1B3656]/78 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#213E61]/82">
+              <span class="text-xs font-semibold text-[#C9A84C]">02</span>
+              <h3 class="mt-5 text-xl font-semibold">Conciliação bancária</h3>
+              <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
+                Conferência para reduzir ruído e dar mais confiança aos dados.
+              </p>
+            </article>
+            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#FAF9F6]/10 bg-[#1B3656]/78 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#213E61]/82">
+              <span class="text-xs font-semibold text-[#C9A84C]">03</span>
+              <h3 class="mt-5 text-xl font-semibold">Fluxo de caixa</h3>
+              <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
+                Entradas, saídas e compromissos futuros com mais leitura.
+              </p>
+            </article>
+            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#FAF9F6]/10 bg-[#1B3656]/78 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#213E61]/82">
+              <span class="text-xs font-semibold text-[#C9A84C]">04</span>
+              <h3 class="mt-5 text-xl font-semibold">Relatórios financeiros</h3>
+              <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
+                Dados essenciais organizados para acompanhar a operação.
+              </p>
+            </article>
+            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#FAF9F6]/10 bg-[#1B3656]/78 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#213E61]/82">
+              <span class="text-xs font-semibold text-[#C9A84C]">05</span>
+              <h3 class="mt-5 text-xl font-semibold">Leitura financeira da operação</h3>
+              <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
+                Números traduzidos em leitura prática para a gestão.
+              </p>
+            </article>
+            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#C9A84C]/22 bg-[#1D3A5D]/82 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#24466D]/86">
+              <span class="text-xs font-semibold text-[#C9A84C]">06</span>
+              <h3 class="mt-5 text-xl font-semibold">Apoio à gestão financeira</h3>
+              <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
+                Rotina financeira mais próxima da tomada de decisão.
+              </p>
+            </article>
+          </div>
+
+          <div class="bpo-action reveal mt-10 flex justify-center">
+            <a
+              href="#contato"
+              data-whatsapp-placeholder
+              class="button-lift focus-ring inline-flex items-center justify-center rounded-full bg-[#C9A84C] px-9 py-4 text-sm font-semibold text-[#152A47] shadow-[0_18px_42px_rgba(201,168,76,0.16)] hover:bg-[#D6B75F] md:min-w-[230px]"
+            >
+              Quero entender o BPO
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="beneficios" class="subtle-grid bg-[#FAF9F6] py-20 md:py-28">
+        <div class="section-shell">
+          <div class="reveal max-w-3xl">
+            <p class="text-xs font-semibold uppercase text-[#C9A84C]">Benefícios / transformação</p>
+            <h2 class="mt-4 text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
+              O que muda quando o financeiro da empresa passa a ser acompanhado de verdade.
+            </h2>
+            <p class="mt-6 text-base leading-8 text-[#1F2924]/68">
+              O impacto aparece na rotina: menos susto, menos informação espalhada e mais clareza para decidir o próximo passo.
+            </p>
+          </div>
+
+          <div class="stagger mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 soft-shadow">
+              <span class="block h-1 w-10 rounded bg-[#C9A84C]"></span>
+              <h3 class="mt-6 text-lg font-semibold text-[#152A47]">Você entende para onde o dinheiro está indo</h3>
+              <p class="mt-3 text-sm leading-7 text-[#1F2924]/62">A rotina passa a mostrar melhor entradas, saídas e compromissos do mês.</p>
+            </article>
+            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 soft-shadow">
+              <span class="block h-1 w-10 rounded bg-[#3D6B4F]"></span>
+              <h3 class="mt-6 text-lg font-semibold text-[#152A47]">As contas deixam de ficar espalhadas</h3>
+              <p class="mt-3 text-sm leading-7 text-[#1F2924]/62">Informações financeiras ganham organização, cadência e ponto de acompanhamento.</p>
+            </article>
+            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 soft-shadow">
+              <span class="block h-1 w-10 rounded bg-[#152A47]"></span>
+              <h3 class="mt-6 text-lg font-semibold text-[#152A47]">O dono para de carregar tudo sozinho</h3>
+              <p class="mt-3 text-sm leading-7 text-[#1F2924]/62">A operação financeira deixa de depender apenas da memória e disponibilidade da liderança.</p>
+            </article>
+            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 soft-shadow">
+              <span class="block h-1 w-10 rounded bg-[#C9A84C]"></span>
+              <h3 class="mt-6 text-lg font-semibold text-[#152A47]">Fica mais fácil perceber descontrole</h3>
+              <p class="mt-3 text-sm leading-7 text-[#1F2924]/62">Erros, atrasos e gargalos aparecem com mais clareza antes de virarem urgência.</p>
+            </article>
+          </div>
+
+          <div class="reveal mt-12 flex flex-col items-center justify-center gap-5 text-center">
+            <p class="max-w-2xl text-base leading-8 text-[#1F2924]/70">
+              Se o financeiro ainda depende de improviso, a primeira conversa já ajuda a mapear onde falta controle.
+            </p>
+            <a
+              href="#contato"
+              data-whatsapp-placeholder
+              class="button-lift focus-ring inline-flex min-w-[280px] items-center justify-center rounded-full bg-[#3D6B4F] px-11 py-5 text-base font-semibold text-[#FAF9F6] shadow-[0_18px_44px_rgba(61,107,79,0.2)] hover:bg-[#315940]"
+            >
+              Conversar sobre meu financeiro
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="lucrei" class="bg-[#FAF9F6] py-20 md:py-28">
+        <div class="section-shell grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-stretch lg:gap-12">
+          <div class="reveal flex flex-col justify-center lg:pr-6">
+            <p class="text-xs font-semibold uppercase text-[#C9A84C]">Quem é a Lucrei</p>
+            <h2 class="mt-4 text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
+              Uma contabilidade que vai além da rotina operacional.
+            </h2>
+            <p class="mt-6 max-w-2xl text-base leading-8 text-[#1F2924]/70">
+              A Lucrei Contabilidade foi criada por Karen e Simone com a proposta de atender empresas de forma mais clara, próxima e estratégica. Com foco principal em BPO Financeiro e apoio contábil consultivo, a empresa atua para ajudar negócios a organizarem melhor sua operação e ganharem mais controle no dia a dia.
+            </p>
+
+            <div class="mt-8 grid gap-4 md:grid-cols-3">
+              <article class="rounded-lg border border-[#3D6B4F]/10 bg-[#E7DECD]/42 p-5">
+                <h3 class="font-semibold text-[#152A47]">Missão</h3>
+                <p class="mt-3 text-sm leading-7 text-[#1F2924]/64">
+                  Assessorar de forma simples e descomplicada, agilizando a vida do empresário.
+                </p>
+              </article>
+              <article class="rounded-lg border border-[#3D6B4F]/10 bg-white p-5">
+                <h3 class="font-semibold text-[#152A47]">Visão</h3>
+                <p class="mt-3 text-sm leading-7 text-[#1F2924]/64">
+                  Ser referência no segmento contábil pela excelência nos serviços prestados.
+                </p>
+              </article>
+              <article class="rounded-lg border border-[#3D6B4F]/10 bg-[#E7DECD]/42 p-5">
+                <h3 class="font-semibold text-[#152A47]">Valores</h3>
+                <p class="mt-3 text-sm leading-7 text-[#1F2924]/64">
+                  Competência profissional, ética, parceria e inovação.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="h-full rounded-lg border border-[#3D6B4F]/10 bg-[#152A47] p-5 text-[#FAF9F6] soft-shadow md:p-7">
+              <div class="grid h-full min-h-[440px] content-between rounded-md border border-[#FAF9F6]/12 bg-[#FAF9F6]/7 p-6 md:p-8">
+                <div>
+                  <p class="text-xs font-semibold uppercase text-[#C9A84C]">Karen e Simone</p>
+                  <h3 class="mt-3 text-2xl font-semibold leading-tight">À frente da Lucrei Contabilidade</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="grid aspect-[3/4] place-items-center rounded-md border border-[#FAF9F6]/12 bg-[#FAF9F6]/8">
+                    <span class="text-4xl font-semibold text-[#C9A84C]">K</span>
+                  </div>
+                  <div class="grid aspect-[3/4] place-items-center rounded-md border border-[#FAF9F6]/12 bg-[#FAF9F6]/8">
+                    <span class="text-4xl font-semibold text-[#C9A84C]">S</span>
+                  </div>
+                </div>
+                <p class="text-sm leading-7 text-[#FAF9F6]/68">
+                  Área preparada para fotos profissionais futuras das sócias, mantendo presença humana sem transformar a seção em peça promocional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicos" class="light-depth py-20 md:py-28">
+        <div class="section-shell">
+          <div class="reveal max-w-3xl">
+            <p class="text-xs font-semibold uppercase text-[#3D6B4F]">Serviços complementares</p>
+            <h2 class="mt-4 text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
+              Outros serviços que apoiam a estrutura do seu negócio.
+            </h2>
+          </div>
+
+          <div class="stagger mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="reveal soft-hover rounded-lg border border-[#3D6B4F]/10 bg-white/88 p-5 shadow-[0_16px_38px_rgba(21,42,71,0.06)]">
+              <div class="grid h-11 w-11 place-items-center rounded-md bg-[#E7DECD] text-[#3D6B4F]">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5"/><path d="M10 13h6"/><path d="M10 17h4"/></svg>
+              </div>
+              <h3 class="mt-5 font-semibold text-[#152A47]">Assessoria contábil</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/60">Rotina contábil organizada para empresas em operação.</p>
+            </article>
+            <article class="reveal soft-hover rounded-lg border border-[#3D6B4F]/10 bg-white/88 p-5 shadow-[0_16px_38px_rgba(21,42,71,0.06)]">
+              <div class="grid h-11 w-11 place-items-center rounded-md bg-[#E7DECD] text-[#3D6B4F]">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20h16"/><path d="M6 20V8l6-4 6 4v12"/><path d="M10 20v-6h4v6"/></svg>
+              </div>
+              <h3 class="mt-5 font-semibold text-[#152A47]">Abertura de empresas</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/60">Apoio para iniciar a empresa com estrutura correta.</p>
+            </article>
+            <article class="reveal soft-hover rounded-lg border border-[#3D6B4F]/10 bg-white/88 p-5 shadow-[0_16px_38px_rgba(21,42,71,0.06)]">
+              <div class="grid h-11 w-11 place-items-center rounded-md bg-[#E7DECD] text-[#3D6B4F]">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 4v5c0 4.5-2.9 7.8-7 9-4.1-1.2-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
+              <h3 class="mt-5 font-semibold text-[#152A47]">Regularizações</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/60">Organização de pendências e ajustes cadastrais.</p>
+            </article>
+            <article class="reveal soft-hover rounded-lg border border-[#3D6B4F]/10 bg-white/88 p-5 shadow-[0_16px_38px_rgba(21,42,71,0.06)]">
+              <div class="grid h-11 w-11 place-items-center rounded-md bg-[#E7DECD] text-[#3D6B4F]">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19V5h14v14z"/><path d="M8 9h8"/><path d="M8 13h5"/><path d="M15 16l1.5 1.5L20 14"/></svg>
+              </div>
+              <h3 class="mt-5 font-semibold text-[#152A47]">Consultoria tributária</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/60">Orientação para decisões fiscais e tributárias.</p>
+            </article>
+            <article class="reveal soft-hover rounded-lg border border-[#3D6B4F]/10 bg-white/88 p-5 shadow-[0_16px_38px_rgba(21,42,71,0.06)]">
+              <div class="grid h-11 w-11 place-items-center rounded-md bg-[#E7DECD] text-[#3D6B4F]">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16 11a4 4 0 1 0-8 0"/><path d="M4 20a8 8 0 0 1 16 0"/><path d="M17 8h4"/><path d="M19 6v4"/></svg>
+              </div>
+              <h3 class="mt-5 font-semibold text-[#152A47]">Folha de pagamento</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/60">Suporte nas rotinas ligadas ao time e obrigações.</p>
+            </article>
+            <article class="reveal soft-hover rounded-lg border border-[#3D6B4F]/10 bg-white/88 p-5 shadow-[0_16px_38px_rgba(21,42,71,0.06)]">
+              <div class="grid h-11 w-11 place-items-center rounded-md bg-[#E7DECD] text-[#3D6B4F]">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 3h10v18H7z"/><path d="M9 7h6"/><path d="M9 11h6"/><path d="M9 15h3"/></svg>
+              </div>
+              <h3 class="mt-5 font-semibold text-[#152A47]">IRPF</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/60">Apoio para declarações e organização de informações.</p>
+            </article>
+            <article class="reveal soft-hover rounded-lg border border-[#3D6B4F]/10 bg-white/88 p-5 shadow-[0_16px_38px_rgba(21,42,71,0.06)]">
+              <div class="grid h-11 w-11 place-items-center rounded-md bg-[#E7DECD] text-[#3D6B4F]">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19V7l7-4 7 4v12"/><path d="M9 19v-5h6v5"/><path d="M7 10h10"/></svg>
+              </div>
+              <h3 class="mt-5 font-semibold text-[#152A47]">Atendimento a MEIs</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/60">Orientação para formalização e rotina do microempreendedor.</p>
+            </article>
+            <article class="reveal soft-hover rounded-lg border border-[#3D6B4F]/10 bg-white/88 p-5 shadow-[0_16px_38px_rgba(21,42,71,0.06)]">
+              <div class="grid h-11 w-11 place-items-center rounded-md bg-[#E7DECD] text-[#3D6B4F]">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 18V6"/><path d="M8 18V9"/><path d="M12 18V4"/><path d="M16 18v-7"/><path d="M20 18V8"/><path d="M3 20h18"/></svg>
+              </div>
+              <h3 class="mt-5 font-semibold text-[#152A47]">Apoio financeiro operacional</h3>
+              <p class="mt-3 text-sm leading-6 text-[#1F2924]/60">Suporte para organizar rotinas e informações financeiras.</p>
+            </article>
+            <article class="reveal soft-hover rounded-lg border border-[#C9A84C]/45 bg-[#152A47] p-6 text-[#FAF9F6] sm:col-span-2 lg:col-span-4">
+              <div class="grid gap-5 md:grid-cols-[auto_1fr] md:items-start">
+                <div class="grid h-12 w-12 place-items-center rounded-md bg-[#C9A84C] text-[#152A47]">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3"/><path d="M5 10h14v11H5z"/><path d="M12 15v2"/></svg>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase text-[#C9A84C]">Serviço com direcionamento preparado</p>
+                  <h3 class="mt-3 text-xl font-semibold">Certificado digital</h3>
+                  <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/74">
+                    Bloco destacado para apoiar demandas digitais e, na próxima etapa, receber link para site ou parceiro responsável.
+                  </p>
+                  <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
+                    <a href="#contato" data-contact-placeholder class="button-lift focus-ring inline-flex items-center justify-center rounded-md bg-[#C9A84C] px-5 py-3 text-sm font-semibold text-[#152A47] hover:bg-[#D6B75F]">
+                      Solicitar certificado digital
+                    </a>
+                    <span class="text-xs text-[#FAF9F6]/55">Placeholder para link externo futuro.</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="warm-depth py-20 md:py-28">
+        <div class="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div class="reveal">
+            <p class="text-xs font-semibold uppercase text-[#C9A84C]">FAQ</p>
+            <h2 class="mt-4 text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
+              PRINCIPAIS DÚVIDAS
+            </h2>
+            <p class="mt-6 text-base leading-8 text-[#1F2924]/68">
+              Respostas rápidas para entender como a Lucrei pode apoiar sua empresa.
+            </p>
+            <a
+              href="#contato"
+              data-whatsapp-placeholder
+              class="button-lift focus-ring mt-8 inline-flex items-center justify-center rounded-full bg-[#3D6B4F] px-7 py-4 text-sm font-semibold text-[#FAF9F6] shadow-[0_16px_36px_rgba(61,107,79,0.16)] hover:bg-[#315940]"
+            >
+              Conversar com a Lucrei
+            </a>
+          </div>
+
+          <div class="reveal space-y-3">
+            <article class="rounded-lg border border-[#3D6B4F]/10 bg-white">
+              <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" type="button" aria-expanded="true" aria-controls="faq-1" data-faq-button>
+                <span class="font-semibold text-[#152A47]">O BPO Financeiro é indicado para qual tipo de empresa?</span>
+                <span class="text-xl text-[#3D6B4F]" data-faq-icon>-</span>
+              </button>
+              <div id="faq-1" class="px-5 pb-5 text-sm leading-7 text-[#1F2924]/65" data-faq-panel>
+                Para empresas que já operam, vendem e precisam organizar melhor contas a pagar, recebimentos, caixa e informações financeiras.
+              </div>
+            </article>
+            <article class="rounded-lg border border-[#3D6B4F]/10 bg-white">
+              <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" type="button" aria-expanded="false" aria-controls="faq-2" data-faq-button>
+                <span class="font-semibold text-[#152A47]">A Lucrei atende apenas empresas de serviço?</span>
+                <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
+              </button>
+              <div id="faq-2" class="hidden px-5 pb-5 text-sm leading-7 text-[#1F2924]/65" data-faq-panel>
+                A comunicação conversa principalmente com empresas de serviço, mas a Lucrei pode avaliar outros negócios que precisam de apoio financeiro e contábil.
+              </div>
+            </article>
+            <article class="rounded-lg border border-[#3D6B4F]/10 bg-white">
+              <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" type="button" aria-expanded="false" aria-controls="faq-3" data-faq-button>
+                <span class="font-semibold text-[#152A47]">Como funciona a troca de contador?</span>
+                <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
+              </button>
+              <div id="faq-3" class="hidden px-5 pb-5 text-sm leading-7 text-[#1F2924]/65" data-faq-panel>
+                A troca pode ser conduzida com orientação para organizar documentos, acessos e informações necessárias para uma transição mais tranquila.
+              </div>
+            </article>
+            <article class="rounded-lg border border-[#3D6B4F]/10 bg-white">
+              <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" type="button" aria-expanded="false" aria-controls="faq-4" data-faq-button>
+                <span class="font-semibold text-[#152A47]">Quais atividades estão dentro do BPO?</span>
+                <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
+              </button>
+              <div id="faq-4" class="hidden px-5 pb-5 text-sm leading-7 text-[#1F2924]/65" data-faq-panel>
+                O escopo pode envolver contas a pagar e receber, conciliação bancária, fluxo de caixa, relatórios e apoio à leitura financeira.
+              </div>
+            </article>
+            <article class="rounded-lg border border-[#3D6B4F]/10 bg-white">
+              <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" type="button" aria-expanded="false" aria-controls="faq-5" data-faq-button>
+                <span class="font-semibold text-[#152A47]">Como falar com a equipe da Lucrei?</span>
+                <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
+              </button>
+              <div id="faq-5" class="hidden px-5 pb-5 text-sm leading-7 text-[#1F2924]/65" data-faq-panel>
+                Clique em um dos botões de conversa para falar com a equipe e explicar o momento da sua empresa.
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="bg-[#FAF9F6] py-20 md:py-28">
+        <div class="section-shell">
+          <div class="reveal rounded-lg border border-[#3D6B4F]/12 bg-white/84 p-7 text-center shadow-[0_22px_70px_rgba(21,42,71,0.09)] md:p-10">
+            <p class="text-xs font-semibold uppercase text-[#3D6B4F]">Contato</p>
+            <h2 class="mx-auto mt-4 max-w-3xl text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
+              Vamos conversar sobre a estrutura financeira da sua empresa?
+            </h2>
+            <p class="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#1F2924]/68">
+              Se o seu negócio já opera, mas ainda falta clareza, controle e previsibilidade, a Lucrei pode ajudar a construir essa base com você.
+            </p>
+            <a
+              href="#contato"
+              data-whatsapp-placeholder
+              class="button-lift focus-ring mt-8 inline-flex items-center justify-center rounded-full bg-[#3D6B4F] px-9 py-5 text-sm font-semibold uppercase tracking-[0.08em] text-[#FAF9F6] shadow-[0_18px_42px_rgba(61,107,79,0.18)] hover:bg-[#315940]"
+            >
+              CONVERSAR COM EQUIPE
+            </a>
+
+            <div class="mt-9 flex items-center justify-center gap-3">
+              <a href="#contato" data-contact-placeholder aria-label="WhatsApp" class="grid h-12 w-12 place-items-center rounded-full border border-[#3D6B4F]/14 bg-[#FAF9F6] text-[#3D6B4F] transition hover:border-[#C9A84C] hover:bg-[#E7DECD]/55">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19l1.1-3.4A7.4 7.4 0 1 1 9 18.3z"/><path d="M9.5 8.8c.2 2.9 2.4 5.1 5.2 5.6l1.1-1.4c.2-.3.6-.4.9-.2l1.4.7"/></svg>
+              </a>
+              <a href="#contato" data-contact-placeholder aria-label="Instagram" class="grid h-12 w-12 place-items-center rounded-full border border-[#3D6B4F]/14 bg-[#FAF9F6] text-[#3D6B4F] transition hover:border-[#C9A84C] hover:bg-[#E7DECD]/55">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><path d="M16.8 7.2h.01"/></svg>
+              </a>
+              <a href="#contato" data-contact-placeholder aria-label="E-mail" class="grid h-12 w-12 place-items-center rounded-full border border-[#3D6B4F]/14 bg-[#FAF9F6] text-[#3D6B4F] transition hover:border-[#C9A84C] hover:bg-[#E7DECD]/55">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+              </a>
+              <a href="#contato" data-contact-placeholder aria-label="Localização" class="grid h-12 w-12 place-items-center rounded-full border border-[#3D6B4F]/14 bg-[#FAF9F6] text-[#3D6B4F] transition hover:border-[#C9A84C] hover:bg-[#E7DECD]/55">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[#3D6B4F]/10 bg-[#FAF9F6] py-8">
+      <div class="section-shell flex flex-col gap-5 text-sm text-[#1F2924]/58 md:flex-row md:items-center md:justify-between">
+        <div class="flex flex-col gap-3">
+          <img
+            src="assets/lucrei-logo-horizontal.png"
+            alt="Lucrei Contabilidade"
+            class="h-8 w-auto max-w-[136px] object-contain"
+          />
+          <p>Lucrei Contabilidade. BPO Financeiro e apoio contábil para empresas em Curitiba e região.</p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a class="hover:text-[#3D6B4F]" href="#bpo">BPO Financeiro</a>
+          <a class="hover:text-[#3D6B4F]" href="#servicos">Serviços</a>
+          <a class="hover:text-[#3D6B4F]" href="#faq">FAQ</a>
+          <a class="hover:text-[#3D6B4F]" href="#contato">Contato</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuButton = document.querySelector("#menuButton");
+      const mobileMenu = document.querySelector("#mobileMenu");
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        mobileMenu.classList.toggle("hidden");
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // Placeholder do WhatsApp e demais pontos de contato: trocar pelo link real na etapa de integração.
+      document.querySelectorAll("[data-whatsapp-placeholder], [data-contact-placeholder]").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          document.querySelector("#contato").scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      document.querySelectorAll("[data-faq-button]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const isOpen = button.getAttribute("aria-expanded") === "true";
+
+          document.querySelectorAll("[data-faq-button]").forEach((currentButton) => {
+            const panel = document.getElementById(currentButton.getAttribute("aria-controls"));
+            const icon = currentButton.querySelector("[data-faq-icon]");
+            currentButton.setAttribute("aria-expanded", "false");
+            panel.classList.add("hidden");
+            icon.textContent = "+";
+          });
+
+          if (!isOpen) {
+            const panel = document.getElementById(button.getAttribute("aria-controls"));
+            const icon = button.querySelector("[data-faq-icon]");
+            button.setAttribute("aria-expanded", "true");
+            panel.classList.remove("hidden");
+            icon.textContent = "-";
+          }
+        });
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+    </script>
+  </body>
+</html>
