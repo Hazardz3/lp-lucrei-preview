@@ -25,12 +25,41 @@
 
       html {
         scroll-padding-top: 96px;
+        scrollbar-color: #c9a84c #f4f1eb;
       }
 
       body {
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         color: var(--ink);
         background: var(--warm-white);
+      }
+
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f4f1eb;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border: 3px solid #f4f1eb;
+        border-radius: 999px;
+        background: linear-gradient(180deg, #c9a84c 0%, #3d6b4f 100%);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #d6b75f 0%, #315940 100%);
+      }
+
+      ::-webkit-scrollbar-button {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+
+      main > section {
+        position: relative;
       }
 
       .section-shell {
@@ -153,20 +182,16 @@
       .bpo-depth {
         position: relative;
         background:
-          linear-gradient(180deg, rgba(250, 249, 246, 0.12) 0%, rgba(250, 249, 246, 0) 7%),
-          radial-gradient(circle at 82% 18%, rgba(201, 168, 76, 0.09), transparent 26%),
-          radial-gradient(circle at 10% 82%, rgba(61, 107, 79, 0.08), transparent 34%),
-          linear-gradient(180deg, #162d4c 0%, #102743 48%, #0b1a30 100%);
+          linear-gradient(90deg, rgba(3, 10, 22, 0.3), rgba(3, 10, 22, 0) 28%, rgba(3, 10, 22, 0) 72%, rgba(3, 10, 22, 0.28)),
+          linear-gradient(180deg, #142945 0%, #0f223a 48%, #0a192c 100%);
+      }
+
+      .bpo-depth::before {
+        display: none;
       }
 
       .bpo-depth::after {
-        content: "";
-        position: absolute;
-        inset-inline: 0;
-        bottom: 0;
-        height: 84px;
-        background: linear-gradient(180deg, rgba(13, 28, 51, 0), #faf9f6);
-        pointer-events: none;
+        display: none;
       }
 
       .bpo-depth > .section-shell {
@@ -184,8 +209,10 @@
 
       .reveal {
         opacity: 0;
-        transform: translateY(16px);
-        transition: opacity 650ms ease, transform 650ms ease;
+        transform: translateY(18px);
+        transition:
+          opacity 540ms cubic-bezier(0.22, 1, 0.36, 1),
+          transform 540ms cubic-bezier(0.22, 1, 0.36, 1);
       }
 
       .reveal.is-visible {
@@ -222,7 +249,7 @@
       }
 
       .interactive-card {
-        transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+        transition: transform 190ms ease, border-color 190ms ease, background-color 190ms ease, box-shadow 190ms ease;
       }
 
       .interactive-card:hover {
@@ -271,9 +298,7 @@
       }
 
       .bpo-sequence .bpo-title.reveal,
-      .bpo-sequence .bpo-copy.reveal,
-      .bpo-sequence .bpo-highlight.reveal,
-      .bpo-sequence .bpo-label.reveal,
+      .bpo-sequence .bpo-subtitle.reveal,
       .bpo-sequence .bpo-card.reveal,
       .bpo-sequence .bpo-action.reveal {
         transform: translateY(18px);
@@ -285,63 +310,169 @@
           background-color 240ms ease;
       }
 
-      .bpo-sequence .bpo-copy.reveal {
+      .bpo-sequence .bpo-title.reveal {
         transition-delay: 80ms;
       }
 
-      .bpo-sequence .bpo-highlights .bpo-highlight:nth-child(1) {
-        transition-delay: 150ms;
-      }
-
-      .bpo-sequence .bpo-highlights .bpo-highlight:nth-child(2) {
-        transition-delay: 210ms;
-      }
-
-      .bpo-sequence .bpo-highlights .bpo-highlight:nth-child(3) {
-        transition-delay: 270ms;
-      }
-
-      .bpo-sequence .bpo-label.reveal {
-        transition-delay: 310ms;
+      .bpo-sequence .bpo-subtitle.reveal {
+        transition-delay: 130ms;
       }
 
       .bpo-sequence .bpo-services .bpo-card:nth-child(1) {
-        transition-delay: 360ms;
+        transition-delay: 190ms;
       }
 
       .bpo-sequence .bpo-services .bpo-card:nth-child(2) {
-        transition-delay: 410ms;
+        transition-delay: 230ms;
       }
 
       .bpo-sequence .bpo-services .bpo-card:nth-child(3) {
-        transition-delay: 460ms;
+        transition-delay: 270ms;
       }
 
       .bpo-sequence .bpo-services .bpo-card:nth-child(4) {
-        transition-delay: 510ms;
+        transition-delay: 310ms;
       }
 
       .bpo-sequence .bpo-services .bpo-card:nth-child(5) {
-        transition-delay: 560ms;
+        transition-delay: 350ms;
       }
 
       .bpo-sequence .bpo-services .bpo-card:nth-child(6) {
-        transition-delay: 610ms;
+        transition-delay: 390ms;
       }
 
       .bpo-sequence .bpo-action.reveal {
-        transition-delay: 680ms;
+        transition-delay: 460ms;
       }
 
       .bpo-sequence .bpo-card.reveal.is-visible:hover {
         transform: translateY(-4px);
-        border-color: rgba(201, 168, 76, 0.28);
-        box-shadow: 0 22px 54px rgba(3, 10, 22, 0.18);
+        box-shadow: 0 26px 58px rgba(3, 10, 22, 0.28);
         transition-delay: 0ms;
       }
 
+      .bpo-card {
+        position: relative;
+        isolation: isolate;
+        border: 0;
+        background:
+          linear-gradient(135deg, rgba(250, 249, 246, 0.12), rgba(250, 249, 246, 0) 42%),
+          linear-gradient(160deg, rgba(49, 88, 130, 0.98) 0%, rgba(31, 65, 104, 0.98) 50%, rgba(19, 45, 78, 0.98) 100%);
+        box-shadow:
+          inset 0 1px 0 rgba(250, 249, 246, 0.13),
+          inset 0 -1px 0 rgba(3, 10, 22, 0.24),
+          0 20px 48px rgba(3, 10, 22, 0.21);
+      }
+
+      .bpo-card:nth-child(even) {
+        background:
+          linear-gradient(135deg, rgba(250, 249, 246, 0.1), rgba(250, 249, 246, 0) 44%),
+          linear-gradient(160deg, rgba(43, 82, 123, 0.98) 0%, rgba(28, 60, 98, 0.98) 52%, rgba(17, 42, 72, 0.98) 100%);
+      }
+
+      .bpo-card:nth-child(3n) {
+        background:
+          linear-gradient(135deg, rgba(250, 249, 246, 0.11), rgba(250, 249, 246, 0) 42%),
+          linear-gradient(160deg, rgba(53, 94, 137, 0.98) 0%, rgba(31, 68, 108, 0.98) 50%, rgba(18, 43, 75, 0.98) 100%);
+      }
+
+      .bpo-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 0.5rem;
+        background:
+          linear-gradient(180deg, rgba(250, 249, 246, 0.06), rgba(250, 249, 246, 0) 38%),
+          linear-gradient(90deg, rgba(201, 168, 76, 0.05), rgba(201, 168, 76, 0) 40%);
+        opacity: 0.78;
+        pointer-events: none;
+      }
+
+      .bpo-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .bpo-card p {
+        max-width: 21rem;
+        color: rgba(250, 249, 246, 0.72);
+      }
+
+      .bpo-cta {
+        background: linear-gradient(135deg, #d9b84e 0%, #caa647 52%, #b99032 100%);
+        box-shadow:
+          0 16px 34px rgba(201, 168, 76, 0.18),
+          inset 0 1px 0 rgba(250, 249, 246, 0.34);
+      }
+
+      .bpo-cta:hover {
+        background: linear-gradient(135deg, #e3c45f 0%, #d0ad4f 52%, #bd9638 100%);
+        box-shadow:
+          0 18px 40px rgba(201, 168, 76, 0.23),
+          inset 0 1px 0 rgba(250, 249, 246, 0.42);
+      }
+
+      .lucrei-values .reveal:nth-child(1) {
+        transition-delay: 90ms;
+      }
+
+      .lucrei-values .reveal:nth-child(2) {
+        transition-delay: 160ms;
+      }
+
+      .lucrei-values .reveal:nth-child(3) {
+        transition-delay: 230ms;
+      }
+
+      .faq-item {
+        transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+      }
+
+      .faq-item:hover {
+        transform: translateY(-2px);
+        border-color: rgba(201, 168, 76, 0.28);
+        box-shadow: 0 16px 40px rgba(21, 42, 71, 0.08);
+      }
+
+      .faq-sequence .faq-item.reveal:nth-child(1) {
+        transition-delay: 110ms;
+      }
+
+      .faq-sequence .faq-item.reveal:nth-child(2) {
+        transition-delay: 160ms;
+      }
+
+      .faq-sequence .faq-item.reveal:nth-child(3) {
+        transition-delay: 210ms;
+      }
+
+      .faq-sequence .faq-item.reveal:nth-child(4) {
+        transition-delay: 260ms;
+      }
+
+      .faq-sequence .faq-item.reveal:nth-child(5) {
+        transition-delay: 310ms;
+      }
+
+      [data-faq-panel]:not(.hidden) {
+        animation: faqPanelIn 220ms ease both;
+      }
+
+      @keyframes faqPanelIn {
+        from {
+          opacity: 0;
+          transform: translateY(-4px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
       .soft-hover {
-        transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+        transition: transform 190ms ease, border-color 190ms ease, background-color 190ms ease, box-shadow 190ms ease;
       }
 
       .soft-hover:hover {
@@ -358,12 +489,82 @@
         transform: translateY(-2px);
       }
 
+      .benefits-cta {
+        background: linear-gradient(135deg, #3d6b4f 0%, #335f47 52%, #254b38 100%);
+        box-shadow: 0 20px 48px rgba(61, 107, 79, 0.24), inset 0 1px 0 rgba(250, 249, 246, 0.16);
+      }
+
+      .benefits-cta:hover {
+        background: linear-gradient(135deg, #47795b 0%, #35664b 54%, #28543e 100%);
+        box-shadow: 0 24px 56px rgba(61, 107, 79, 0.28), inset 0 1px 0 rgba(250, 249, 246, 0.2);
+      }
+
+      header nav a {
+        position: relative;
+      }
+
+      header nav a::after {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        bottom: 0.45rem;
+        height: 1px;
+        background: currentColor;
+        opacity: 0;
+        transform: scaleX(0.72);
+        transition: opacity 180ms ease, transform 180ms ease;
+      }
+
+      header nav a:hover::after {
+        opacity: 0.32;
+        transform: scaleX(1);
+      }
+
+      header {
+        transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+      }
+
+      header nav,
+      header [data-whatsapp-placeholder] {
+        transition: color 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+      }
+
+      body.bpo-nav-active header {
+        border-color: rgba(201, 168, 76, 0.18);
+        background: rgba(12, 29, 50, 0.96);
+        box-shadow: 0 18px 46px rgba(3, 10, 22, 0.16);
+      }
+
+      body.bpo-nav-active header nav {
+        color: rgba(250, 249, 246, 0.82);
+      }
+
+      body.bpo-nav-active header nav a:hover {
+        color: #c9a84c;
+      }
+
+      body.bpo-nav-active header [data-whatsapp-placeholder] {
+        border-color: rgba(201, 168, 76, 0.42);
+        color: #c9a84c;
+      }
+
+      body.bpo-nav-active header [data-whatsapp-placeholder]:hover {
+        background: #c9a84c;
+        color: #07182a;
+      }
+
       .focus-ring:focus-visible {
         outline: 3px solid rgba(201, 168, 76, 0.55);
         outline-offset: 3px;
       }
 
       @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+
         .hero-sequence .hero-kicker,
         .hero-sequence .hero-title,
         .hero-sequence .hero-copy,
@@ -383,9 +584,7 @@
         }
 
         .bpo-sequence .bpo-title.reveal,
-        .bpo-sequence .bpo-copy.reveal,
-        .bpo-sequence .bpo-highlight.reveal,
-        .bpo-sequence .bpo-label.reveal,
+        .bpo-sequence .bpo-subtitle.reveal,
         .bpo-sequence .bpo-card.reveal,
         .bpo-sequence .bpo-action.reveal {
           opacity: 1;
@@ -414,6 +613,7 @@
           <a class="transition hover:text-[#3D6B4F]" href="#lucrei">Lucrei</a>
           <a class="transition hover:text-[#3D6B4F]" href="#servicos">Serviços</a>
           <a class="transition hover:text-[#3D6B4F]" href="#faq">FAQ</a>
+          <a class="transition hover:text-[#3D6B4F]" href="#contato">Contato</a>
         </nav>
 
         <a
@@ -447,6 +647,7 @@
           <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#lucrei">Quem é a Lucrei</a>
           <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#servicos">Serviços</a>
           <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#faq">Perguntas frequentes</a>
+          <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#contato">Contato</a>
           <a class="rounded-md px-3 py-3 font-medium text-[#3D6B4F] hover:bg-[#E7DECD]" href="#contato" data-whatsapp-placeholder>
             WhatsApp
           </a>
@@ -455,48 +656,41 @@
     </header>
 
     <main id="topo">
-      <section class="hero-depth hero-sequence overflow-hidden bg-[#FAF9F6] pb-16 pt-20 md:pb-20 md:pt-24">
-        <div class="hero-shell grid items-center gap-10 lg:min-h-[calc(100vh-112px)] lg:grid-cols-[1.16fr_0.84fr] lg:gap-7 xl:gap-9">
-          <div class="max-w-[790px]">
-            <p class="hero-kicker mb-5 inline-flex rounded-full border px-[1.05rem] py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-[#3D6B4F]">
-              BPO FINANCEIRO COMO FRENTE PRINCIPAL
-            </p>
-            <h1 class="hero-title max-w-[790px] text-4xl font-semibold leading-[1.02] text-[#152A47] md:text-[3.15rem] xl:text-[3.38rem]">
-              <span class="block">Sua empresa vende.</span>
-              <span class="block">E o seu financeiro ainda</span>
-              <span class="block">depende de você?</span>
-            </h1>
-            <p class="hero-copy mt-6 max-w-[720px] text-lg font-semibold leading-8 text-[#1F2924]/78 md:text-xl md:leading-9">
-              Com contabilidade consultiva e BPO Financeiro, a Lucrei apoia empresas que precisam organizar o financeiro e ganhar mais clareza sobre a operação.
-            </p>
+      <section class="hero-depth hero-sequence overflow-hidden bg-[#FAF9F6] pb-16 pt-20 md:pb-16 md:pt-20">
+        <div class="hero-shell grid items-center gap-10 lg:min-h-[calc(100vh-144px)] lg:grid-cols-[0.44fr_0.56fr] lg:gap-8 xl:gap-10">
+          <div class="max-w-[570px] lg:flex lg:aspect-[44/43] lg:w-full lg:flex-col lg:justify-between">
+            <div>
+              <p class="hero-kicker mb-5 inline-flex rounded-full border px-[1.05rem] py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-[#3D6B4F]">
+                CONTABILIDADE CONSULTIVA PARA EMPRESAS
+              </p>
+              <h1 class="hero-title max-w-[570px] text-4xl font-semibold leading-[1.02] text-[#152A47] md:text-[2.65rem] xl:text-[2.72rem]">
+                <span class="block">A sua empresa precisa</span>
+                <span class="block">de uma contabilidade</span>
+                <span class="block">que acompanhe o</span>
+                <span class="block">negócio de verdade.</span>
+              </h1>
+              <p class="hero-copy mt-6 max-w-[600px] text-lg font-semibold leading-8 text-[#1F2924]/78 md:text-xl md:leading-9">
+                Com contabilidade consultiva e BPO Financeiro, a Lucrei apoia empresas que precisam organizar o financeiro e ganhar mais clareza sobre a operação.
+              </p>
+            </div>
 
-            <div class="hero-actions mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
+            <div class="hero-actions mt-9 flex justify-center">
               <a
-                href="#bpo"
-                class="hero-button hero-button-primary focus-ring inline-flex w-full items-center justify-center rounded-full bg-[#3D6B4F] px-9 py-[1.05rem] text-sm font-semibold text-[#FAF9F6] shadow-[0_18px_42px_rgba(61,107,79,0.2)] ring-1 ring-[#C9A84C]/20 hover:bg-[#315940] sm:w-auto sm:min-w-[286px]"
+                href="#contato"
+                data-whatsapp-placeholder
+                class="hero-button hero-button-primary focus-ring inline-flex w-full items-center justify-center rounded-full border border-[#C9A84C] bg-[#3D6B4F] px-9 py-[1.05rem] text-sm font-semibold text-[#FAF9F6] shadow-[0_18px_42px_rgba(61,107,79,0.2)] hover:bg-[#315940] sm:w-[266px]"
               >
-                Quero organizar meu financeiro
-              </a>
-              <a
-                href="#servicos"
-                class="hero-button hero-button-institutional focus-ring inline-flex w-full items-center justify-center rounded-full bg-[#152A47] px-9 py-[1.05rem] text-sm font-semibold text-[#FAF9F6] shadow-[0_18px_42px_rgba(21,42,71,0.18)] ring-1 ring-[#C9A84C]/24 hover:bg-[#1D365A] sm:w-auto sm:min-w-[250px]"
-              >
-                Preciso de uma contabilidade
+                Falar com a Lucrei
               </a>
             </div>
 
-            <div class="hero-actions mt-8 grid gap-3 text-sm font-semibold text-[#152A47] sm:grid-cols-3">
-              <span class="rounded-lg border border-[#3D6B4F]/12 bg-[#FAF9F6]/76 px-4 py-4 shadow-[0_14px_34px_rgba(21,42,71,0.06)]">Entenda o que entra e o que sai</span>
-              <span class="rounded-lg border border-[#C9A84C]/24 bg-[#E7DECD]/46 px-4 py-4 shadow-[0_14px_34px_rgba(21,42,71,0.06)]">Pare de decidir só pelo saldo da conta</span>
-              <span class="rounded-lg border border-[#3D6B4F]/12 bg-[#EEF4F0] px-4 py-4 shadow-[0_14px_34px_rgba(21,42,71,0.06)]">Tenha uma rotina financeira acompanhada</span>
-            </div>
           </div>
 
-          <div class="hero-media lg:-mr-14 lg:mt-24 xl:-mr-24 xl:mt-28">
+          <div class="hero-media">
             <img
-              src="assets/hero-lucrei-recepcao-premium.jpg"
-              alt="Recepção premium da Lucrei Contabilidade com identidade visual aplicada em um ambiente corporativo elegante."
-              class="h-[320px] w-full rounded-lg object-cover object-center shadow-[0_24px_70px_rgba(21,42,71,0.14)] sm:h-[380px] md:h-[450px] lg:h-[430px] xl:h-[450px]"
+              src="assets/hero-lucrei-contabilidade-final.png"
+              alt="Escritório premium da Lucrei Contabilidade com identidade visual aplicada em um ambiente corporativo elegante."
+              class="h-[320px] w-full rounded-lg object-cover object-center shadow-[0_24px_70px_rgba(21,42,71,0.14)] sm:h-[380px] md:h-[450px] lg:aspect-[4/3] lg:h-auto"
             />
           </div>
         </div>
@@ -505,7 +699,7 @@
       <section id="contexto" class="context-depth context-sequence py-24 md:py-32 lg:flex lg:min-h-[740px] lg:items-center xl:min-h-[780px]">
         <div class="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
           <div class="lg:pr-6">
-            <p class="text-xs font-semibold uppercase text-[#3D6B4F]">Problema / cenário</p>
+            <p class="text-xs font-semibold uppercase text-[#3D6B4F]">Contexto</p>
             <h2 class="context-title reveal mt-4 max-w-xl text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
               Quando a empresa cresce, o financeiro não pode continuar no improviso.
             </h2>
@@ -547,81 +741,69 @@
         </div>
       </section>
 
-      <section id="bpo" class="bpo-depth bpo-sequence overflow-hidden py-20 text-[#FAF9F6] md:py-24">
+      <section id="bpo" class="bpo-depth bpo-sequence overflow-hidden py-24 text-[#FAF9F6] md:py-28">
         <div class="section-shell">
-          <div class="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-end lg:gap-14">
-            <div>
-              <h2 class="bpo-title reveal text-4xl font-semibold leading-tight md:text-6xl">
-                BPO Financeiro:
-              </h2>
-            </div>
-
-            <div class="lg:pb-1">
-              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#C9A84C]">3 diferenças na sua empresa</p>
-              <div class="bpo-highlights mt-4 grid gap-3 text-sm font-semibold text-[#FAF9F6]/84">
-                <span class="bpo-highlight reveal rounded-lg border border-[#FAF9F6]/10 bg-[#FAF9F6]/7 px-5 py-4">Tira o financeiro das costas do dono</span>
-                <span class="bpo-highlight reveal rounded-lg border border-[#C9A84C]/22 bg-[#FAF9F6]/8 px-5 py-4">Para de decidir só pelo saldo da conta</span>
-                <span class="bpo-highlight reveal rounded-lg border border-[#FAF9F6]/10 bg-[#FAF9F6]/7 px-5 py-4">Dá mais visão do que realmente sobra no mês</span>
-              </div>
-            </div>
+          <div class="max-w-4xl">
+            <h2 class="bpo-title reveal text-4xl font-semibold leading-tight md:text-6xl">
+              BPO FINANCEIRO
+            </h2>
+            <p class="bpo-subtitle reveal mt-4 max-w-2xl text-xl leading-8 text-[#FAF9F6]/78 md:text-2xl">
+              O que o BPO coloca em ordem no dia a dia.
+            </p>
           </div>
 
-          <div class="bpo-label reveal mt-12">
-            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#C9A84C]">O que entra no BPO</p>
-          </div>
-
-          <div class="bpo-services mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#FAF9F6]/10 bg-[#1B3656]/78 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#213E61]/82">
+          <div class="bpo-services mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <article class="bpo-card reveal min-h-[196px] rounded-lg p-7">
               <span class="text-xs font-semibold text-[#C9A84C]">01</span>
               <h3 class="mt-5 text-xl font-semibold">Contas a pagar e receber</h3>
               <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
-                Vencimentos, recebimentos e compromissos em uma rotina mais clara.
+                Organizamos vencimentos, cobranças e recebimentos da rotina.
               </p>
             </article>
-            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#FAF9F6]/10 bg-[#1B3656]/78 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#213E61]/82">
+            <article class="bpo-card reveal min-h-[196px] rounded-lg p-7">
               <span class="text-xs font-semibold text-[#C9A84C]">02</span>
               <h3 class="mt-5 text-xl font-semibold">Conciliação bancária</h3>
               <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
-                Conferência para reduzir ruído e dar mais confiança aos dados.
+                Conferimos movimentações para reduzir divergências nos dados.
               </p>
             </article>
-            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#FAF9F6]/10 bg-[#1B3656]/78 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#213E61]/82">
+            <article class="bpo-card reveal min-h-[196px] rounded-lg p-7">
               <span class="text-xs font-semibold text-[#C9A84C]">03</span>
               <h3 class="mt-5 text-xl font-semibold">Fluxo de caixa</h3>
               <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
-                Entradas, saídas e compromissos futuros com mais leitura.
+                Mostramos entradas, saídas e compromissos futuros da operação.
               </p>
             </article>
-            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#FAF9F6]/10 bg-[#1B3656]/78 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#213E61]/82">
+            <article class="bpo-card reveal min-h-[196px] rounded-lg p-7">
               <span class="text-xs font-semibold text-[#C9A84C]">04</span>
               <h3 class="mt-5 text-xl font-semibold">Relatórios financeiros</h3>
               <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
-                Dados essenciais organizados para acompanhar a operação.
+                Reunimos os números principais para acompanhamento mais claro.
               </p>
             </article>
-            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#FAF9F6]/10 bg-[#1B3656]/78 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#213E61]/82">
+            <article class="bpo-card reveal min-h-[196px] rounded-lg p-7">
               <span class="text-xs font-semibold text-[#C9A84C]">05</span>
               <h3 class="mt-5 text-xl font-semibold">Leitura financeira da operação</h3>
               <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
-                Números traduzidos em leitura prática para a gestão.
+                Traduzimos os números para entender o que está acontecendo no negócio.
               </p>
             </article>
-            <article class="bpo-card reveal interactive-card min-h-[188px] rounded-lg border border-[#C9A84C]/22 bg-[#1D3A5D]/82 p-7 shadow-[0_22px_60px_rgba(3,10,22,0.16)] hover:bg-[#24466D]/86">
+            <article class="bpo-card reveal min-h-[196px] rounded-lg p-7">
               <span class="text-xs font-semibold text-[#C9A84C]">06</span>
               <h3 class="mt-5 text-xl font-semibold">Apoio à gestão financeira</h3>
               <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/68">
-                Rotina financeira mais próxima da tomada de decisão.
+                Usamos essas informações para apoiar decisões com mais contexto.
               </p>
             </article>
           </div>
 
-          <div class="bpo-action reveal mt-10 flex justify-center">
+          <div class="bpo-action reveal mt-12 flex justify-center">
             <a
               href="#contato"
               data-whatsapp-placeholder
-              class="button-lift focus-ring inline-flex items-center justify-center rounded-full bg-[#C9A84C] px-9 py-4 text-sm font-semibold text-[#152A47] shadow-[0_18px_42px_rgba(201,168,76,0.16)] hover:bg-[#D6B75F] md:min-w-[230px]"
+              class="bpo-cta button-lift focus-ring inline-flex items-center justify-center rounded-full px-10 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-[#07182A] md:min-w-[230px]"
             >
-              Quero entender o BPO
+              QUERO ENTENDER O BPO
             </a>
           </div>
         </div>
@@ -629,34 +811,31 @@
 
       <section id="beneficios" class="subtle-grid bg-[#FAF9F6] py-20 md:py-28">
         <div class="section-shell">
-          <div class="reveal max-w-3xl">
-            <p class="text-xs font-semibold uppercase text-[#C9A84C]">Benefícios / transformação</p>
+          <div class="reveal mx-auto max-w-3xl text-center">
+            <p class="text-xs font-semibold uppercase text-[#C9A84C]">Benefícios</p>
             <h2 class="mt-4 text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
               O que muda quando o financeiro da empresa passa a ser acompanhado de verdade.
             </h2>
-            <p class="mt-6 text-base leading-8 text-[#1F2924]/68">
-              O impacto aparece na rotina: menos susto, menos informação espalhada e mais clareza para decidir o próximo passo.
-            </p>
           </div>
 
           <div class="stagger mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 soft-shadow">
-              <span class="block h-1 w-10 rounded bg-[#C9A84C]"></span>
+            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 text-center soft-shadow">
+              <span class="mx-auto block h-1 w-10 rounded bg-[#C9A84C]"></span>
               <h3 class="mt-6 text-lg font-semibold text-[#152A47]">Você entende para onde o dinheiro está indo</h3>
               <p class="mt-3 text-sm leading-7 text-[#1F2924]/62">A rotina passa a mostrar melhor entradas, saídas e compromissos do mês.</p>
             </article>
-            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 soft-shadow">
-              <span class="block h-1 w-10 rounded bg-[#3D6B4F]"></span>
+            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 text-center soft-shadow">
+              <span class="mx-auto block h-1 w-10 rounded bg-[#3D6B4F]"></span>
               <h3 class="mt-6 text-lg font-semibold text-[#152A47]">As contas deixam de ficar espalhadas</h3>
               <p class="mt-3 text-sm leading-7 text-[#1F2924]/62">Informações financeiras ganham organização, cadência e ponto de acompanhamento.</p>
             </article>
-            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 soft-shadow">
-              <span class="block h-1 w-10 rounded bg-[#152A47]"></span>
+            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 text-center soft-shadow">
+              <span class="mx-auto block h-1 w-10 rounded bg-[#152A47]"></span>
               <h3 class="mt-6 text-lg font-semibold text-[#152A47]">O dono para de carregar tudo sozinho</h3>
               <p class="mt-3 text-sm leading-7 text-[#1F2924]/62">A operação financeira deixa de depender apenas da memória e disponibilidade da liderança.</p>
             </article>
-            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 soft-shadow">
-              <span class="block h-1 w-10 rounded bg-[#C9A84C]"></span>
+            <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 text-center soft-shadow">
+              <span class="mx-auto block h-1 w-10 rounded bg-[#C9A84C]"></span>
               <h3 class="mt-6 text-lg font-semibold text-[#152A47]">Fica mais fácil perceber descontrole</h3>
               <p class="mt-3 text-sm leading-7 text-[#1F2924]/62">Erros, atrasos e gargalos aparecem com mais clareza antes de virarem urgência.</p>
             </article>
@@ -669,10 +848,62 @@
             <a
               href="#contato"
               data-whatsapp-placeholder
-              class="button-lift focus-ring inline-flex min-w-[280px] items-center justify-center rounded-full bg-[#3D6B4F] px-11 py-5 text-base font-semibold text-[#FAF9F6] shadow-[0_18px_44px_rgba(61,107,79,0.2)] hover:bg-[#315940]"
+              class="benefits-cta button-lift focus-ring inline-flex min-w-[310px] items-center justify-center rounded-full px-12 py-5 text-base font-semibold text-[#FAF9F6]"
             >
               Conversar sobre meu financeiro
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="assessoria-contabil" class="light-depth py-20 md:py-28">
+        <div class="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
+          <div class="reveal lg:pr-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#3D6B4F]">Assessoria Contábil</p>
+            <h2 class="mt-4 max-w-xl text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
+              Uma assessoria contábil que acompanha a rotina e dá base para sua empresa operar com mais segurança.
+            </h2>
+            <p class="mt-6 max-w-xl text-base leading-8 text-[#1F2924]/70">
+              A Lucrei apoia empresas com a organização contábil da rotina, cumprimento das obrigações e suporte mais próximo para que o empresário tenha mais clareza e segurança no dia a dia.
+            </p>
+            <a
+              href="#contato"
+              data-whatsapp-placeholder
+              class="button-lift focus-ring mt-8 inline-flex w-full items-center justify-center rounded-full bg-[#3D6B4F] px-9 py-4 text-sm font-semibold text-[#FAF9F6] shadow-[0_18px_42px_rgba(61,107,79,0.18)] hover:bg-[#315940] sm:w-auto"
+            >
+              Quero entender a assessoria contábil
+            </a>
+          </div>
+
+          <div class="stagger grid gap-5 sm:grid-cols-2">
+            <article class="reveal interactive-card flex min-h-[210px] flex-col rounded-lg border border-[#3D6B4F]/12 bg-white p-6 soft-shadow">
+              <span class="block h-1 w-10 rounded bg-[#C9A84C]"></span>
+              <h3 class="mt-6 text-lg font-semibold text-[#152A47]">Apuração de impostos</h3>
+              <p class="mt-3 text-sm leading-7 text-[#1F2924]/64">
+                Cálculo e acompanhamento dos tributos conforme o enquadramento da empresa.
+              </p>
+            </article>
+            <article class="reveal interactive-card flex min-h-[210px] flex-col rounded-lg border border-[#3D6B4F]/12 bg-[#FAF9F6] p-6 soft-shadow">
+              <span class="block h-1 w-10 rounded bg-[#3D6B4F]"></span>
+              <h3 class="mt-6 text-lg font-semibold text-[#152A47]">Organização de notas e documentos</h3>
+              <p class="mt-3 text-sm leading-7 text-[#1F2924]/64">
+                Suporte na rotina de notas fiscais, documentos e informações necessárias para a contabilidade.
+              </p>
+            </article>
+            <article class="reveal interactive-card flex min-h-[210px] flex-col rounded-lg border border-[#3D6B4F]/12 bg-[#FAF9F6] p-6 soft-shadow">
+              <span class="block h-1 w-10 rounded bg-[#3D6B4F]"></span>
+              <h3 class="mt-6 text-lg font-semibold text-[#152A47]">Obrigações contábeis em dia</h3>
+              <p class="mt-3 text-sm leading-7 text-[#1F2924]/64">
+                Entrega e acompanhamento das obrigações para reduzir riscos, pendências e atrasos.
+              </p>
+            </article>
+            <article class="reveal interactive-card flex min-h-[210px] flex-col rounded-lg border border-[#C9A84C]/22 bg-[#E7DECD]/44 p-6 soft-shadow">
+              <span class="block h-1 w-10 rounded bg-[#C9A84C]"></span>
+              <h3 class="mt-6 text-lg font-semibold text-[#152A47]">Suporte contábil ao empresário</h3>
+              <p class="mt-3 text-sm leading-7 text-[#1F2924]/64">
+                Orientação para dúvidas da rotina e apoio para entender melhor a situação da empresa.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -684,24 +915,21 @@
             <h2 class="mt-4 text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
               Uma contabilidade que vai além da rotina operacional.
             </h2>
-            <p class="mt-6 max-w-2xl text-base leading-8 text-[#1F2924]/70">
-              A Lucrei Contabilidade foi criada por Karen e Simone com a proposta de atender empresas de forma mais clara, próxima e estratégica. Com foco principal em BPO Financeiro e apoio contábil consultivo, a empresa atua para ajudar negócios a organizarem melhor sua operação e ganharem mais controle no dia a dia.
-            </p>
 
-            <div class="mt-8 grid gap-4 md:grid-cols-3">
-              <article class="rounded-lg border border-[#3D6B4F]/10 bg-[#E7DECD]/42 p-5">
+            <div class="lucrei-values mt-8 grid gap-4 md:grid-cols-3">
+              <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-[#E7DECD]/42 p-5">
                 <h3 class="font-semibold text-[#152A47]">Missão</h3>
                 <p class="mt-3 text-sm leading-7 text-[#1F2924]/64">
                   Assessorar de forma simples e descomplicada, agilizando a vida do empresário.
                 </p>
               </article>
-              <article class="rounded-lg border border-[#3D6B4F]/10 bg-white p-5">
+              <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-5">
                 <h3 class="font-semibold text-[#152A47]">Visão</h3>
                 <p class="mt-3 text-sm leading-7 text-[#1F2924]/64">
                   Ser referência no segmento contábil pela excelência nos serviços prestados.
                 </p>
               </article>
-              <article class="rounded-lg border border-[#3D6B4F]/10 bg-[#E7DECD]/42 p-5">
+              <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-[#E7DECD]/42 p-5">
                 <h3 class="font-semibold text-[#152A47]">Valores</h3>
                 <p class="mt-3 text-sm leading-7 text-[#1F2924]/64">
                   Competência profissional, ética, parceria e inovação.
@@ -800,19 +1028,19 @@
               <h3 class="mt-5 font-semibold text-[#152A47]">Apoio financeiro operacional</h3>
               <p class="mt-3 text-sm leading-6 text-[#1F2924]/60">Suporte para organizar rotinas e informações financeiras.</p>
             </article>
-            <article class="reveal soft-hover rounded-lg border border-[#C9A84C]/45 bg-[#152A47] p-6 text-[#FAF9F6] sm:col-span-2 lg:col-span-4">
-              <div class="grid gap-5 md:grid-cols-[auto_1fr] md:items-start">
+            <article class="reveal soft-hover rounded-lg border border-[#C9A84C]/45 bg-[#152A47] p-8 text-center text-[#FAF9F6] sm:col-span-2 lg:col-span-4">
+              <div class="mx-auto grid max-w-2xl justify-items-center gap-5">
                 <div class="grid h-12 w-12 place-items-center rounded-md bg-[#C9A84C] text-[#152A47]">
                   <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3"/><path d="M5 10h14v11H5z"/><path d="M12 15v2"/></svg>
                 </div>
-                <div>
+                <div class="flex max-w-2xl flex-col items-center">
                   <p class="text-xs font-semibold uppercase text-[#C9A84C]">Serviço com direcionamento preparado</p>
                   <h3 class="mt-3 text-xl font-semibold">Certificado digital</h3>
                   <p class="mt-3 text-sm leading-7 text-[#FAF9F6]/74">
                     Bloco destacado para apoiar demandas digitais e, na próxima etapa, receber link para site ou parceiro responsável.
                   </p>
-                  <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
-                    <a href="#contato" data-contact-placeholder class="button-lift focus-ring inline-flex items-center justify-center rounded-md bg-[#C9A84C] px-5 py-3 text-sm font-semibold text-[#152A47] hover:bg-[#D6B75F]">
+                  <div class="mt-6 flex w-full flex-col items-center justify-center gap-3">
+                    <a href="#contato" data-contact-placeholder class="button-lift focus-ring inline-flex min-w-[236px] items-center justify-center rounded-md bg-[#C9A84C] px-5 py-3 text-sm font-semibold text-[#152A47] hover:bg-[#D6B75F]">
                       Solicitar certificado digital
                     </a>
                     <span class="text-xs text-[#FAF9F6]/55">Placeholder para link externo futuro.</span>
@@ -824,27 +1052,27 @@
         </div>
       </section>
 
-      <section id="faq" class="warm-depth py-20 md:py-28">
+      <section id="faq" class="faq-sequence warm-depth py-20 md:py-28">
         <div class="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div class="reveal">
             <p class="text-xs font-semibold uppercase text-[#C9A84C]">FAQ</p>
             <h2 class="mt-4 text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
-              PRINCIPAIS DÚVIDAS
+              Dúvidas frequentes
             </h2>
-            <p class="mt-6 text-base leading-8 text-[#1F2924]/68">
+            <p class="reveal mt-6 text-base leading-8 text-[#1F2924]/68">
               Respostas rápidas para entender como a Lucrei pode apoiar sua empresa.
             </p>
             <a
               href="#contato"
               data-whatsapp-placeholder
-              class="button-lift focus-ring mt-8 inline-flex items-center justify-center rounded-full bg-[#3D6B4F] px-7 py-4 text-sm font-semibold text-[#FAF9F6] shadow-[0_16px_36px_rgba(61,107,79,0.16)] hover:bg-[#315940]"
+              class="reveal button-lift focus-ring mt-8 inline-flex items-center justify-center rounded-full bg-[#3D6B4F] px-7 py-4 text-sm font-semibold text-[#FAF9F6] shadow-[0_16px_36px_rgba(61,107,79,0.16)] hover:bg-[#315940]"
             >
               Conversar com a Lucrei
             </a>
           </div>
 
-          <div class="reveal space-y-3">
-            <article class="rounded-lg border border-[#3D6B4F]/10 bg-white">
+          <div class="space-y-3">
+            <article class="faq-item reveal rounded-lg border border-[#3D6B4F]/10 bg-white">
               <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" type="button" aria-expanded="true" aria-controls="faq-1" data-faq-button>
                 <span class="font-semibold text-[#152A47]">O BPO Financeiro é indicado para qual tipo de empresa?</span>
                 <span class="text-xl text-[#3D6B4F]" data-faq-icon>-</span>
@@ -853,7 +1081,7 @@
                 Para empresas que já operam, vendem e precisam organizar melhor contas a pagar, recebimentos, caixa e informações financeiras.
               </div>
             </article>
-            <article class="rounded-lg border border-[#3D6B4F]/10 bg-white">
+            <article class="faq-item reveal rounded-lg border border-[#3D6B4F]/10 bg-white">
               <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" type="button" aria-expanded="false" aria-controls="faq-2" data-faq-button>
                 <span class="font-semibold text-[#152A47]">A Lucrei atende apenas empresas de serviço?</span>
                 <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
@@ -862,7 +1090,7 @@
                 A comunicação conversa principalmente com empresas de serviço, mas a Lucrei pode avaliar outros negócios que precisam de apoio financeiro e contábil.
               </div>
             </article>
-            <article class="rounded-lg border border-[#3D6B4F]/10 bg-white">
+            <article class="faq-item reveal rounded-lg border border-[#3D6B4F]/10 bg-white">
               <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" type="button" aria-expanded="false" aria-controls="faq-3" data-faq-button>
                 <span class="font-semibold text-[#152A47]">Como funciona a troca de contador?</span>
                 <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
@@ -871,7 +1099,7 @@
                 A troca pode ser conduzida com orientação para organizar documentos, acessos e informações necessárias para uma transição mais tranquila.
               </div>
             </article>
-            <article class="rounded-lg border border-[#3D6B4F]/10 bg-white">
+            <article class="faq-item reveal rounded-lg border border-[#3D6B4F]/10 bg-white">
               <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" type="button" aria-expanded="false" aria-controls="faq-4" data-faq-button>
                 <span class="font-semibold text-[#152A47]">Quais atividades estão dentro do BPO?</span>
                 <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
@@ -880,7 +1108,7 @@
                 O escopo pode envolver contas a pagar e receber, conciliação bancária, fluxo de caixa, relatórios e apoio à leitura financeira.
               </div>
             </article>
-            <article class="rounded-lg border border-[#3D6B4F]/10 bg-white">
+            <article class="faq-item reveal rounded-lg border border-[#3D6B4F]/10 bg-white">
               <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" type="button" aria-expanded="false" aria-controls="faq-5" data-faq-button>
                 <span class="font-semibold text-[#152A47]">Como falar com a equipe da Lucrei?</span>
                 <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
@@ -930,21 +1158,23 @@
       </section>
     </main>
 
-    <footer class="border-t border-[#3D6B4F]/10 bg-[#FAF9F6] py-8">
-      <div class="section-shell flex flex-col gap-5 text-sm text-[#1F2924]/58 md:flex-row md:items-center md:justify-between">
-        <div class="flex flex-col gap-3">
+    <footer class="border-t border-[#3D6B4F]/10 bg-[#FAF9F6] py-10">
+      <div class="section-shell flex flex-col gap-6 text-sm text-[#1F2924]/62 md:flex-row md:items-start md:justify-between">
+        <div class="space-y-4">
           <img
             src="assets/lucrei-logo-horizontal.png"
             alt="Lucrei Contabilidade"
             class="h-8 w-auto max-w-[136px] object-contain"
           />
-          <p>Lucrei Contabilidade. BPO Financeiro e apoio contábil para empresas em Curitiba e região.</p>
+          <p>CNPJ: 00.000.000/0000-00 | Curitiba e região | contato@lucreicontabilidade.com.br</p>
         </div>
-        <div class="flex flex-wrap gap-4">
-          <a class="hover:text-[#3D6B4F]" href="#bpo">BPO Financeiro</a>
-          <a class="hover:text-[#3D6B4F]" href="#servicos">Serviços</a>
-          <a class="hover:text-[#3D6B4F]" href="#faq">FAQ</a>
-          <a class="hover:text-[#3D6B4F]" href="#contato">Contato</a>
+
+        <div class="space-y-3 md:text-right">
+          <p>© 2026 Lucrei Contabilidade. Todos os direitos reservados.</p>
+          <div class="flex flex-wrap gap-x-5 gap-y-2 md:justify-end">
+            <a class="hover:text-[#3D6B4F]" href="#contato">Política de Privacidade</a>
+            <a class="hover:text-[#3D6B4F]" href="#contato">Termos de Uso</a>
+          </div>
         </div>
       </div>
     </footer>
@@ -953,6 +1183,8 @@
       const menuButton = document.querySelector("#menuButton");
       const mobileMenu = document.querySelector("#mobileMenu");
       const mobileLinks = mobileMenu.querySelectorAll("a");
+      const siteHeader = document.querySelector("header");
+      const bpoSection = document.querySelector("#bpo");
 
       menuButton.addEventListener("click", () => {
         const isOpen = !mobileMenu.classList.contains("hidden");
@@ -966,6 +1198,29 @@
           menuButton.setAttribute("aria-expanded", "false");
         });
       });
+
+      if (siteHeader && bpoSection) {
+        const updateHeaderTheme = () => {
+          const headerLine = siteHeader.offsetHeight + 8;
+          const bpoBounds = bpoSection.getBoundingClientRect();
+          const isOverBpo = bpoBounds.top <= headerLine && bpoBounds.bottom >= headerLine;
+          document.body.classList.toggle("bpo-nav-active", isOverBpo);
+        };
+
+        let headerThemeTicking = false;
+        const requestHeaderTheme = () => {
+          if (headerThemeTicking) return;
+          headerThemeTicking = true;
+          window.requestAnimationFrame(() => {
+            updateHeaderTheme();
+            headerThemeTicking = false;
+          });
+        };
+
+        updateHeaderTheme();
+        window.addEventListener("scroll", requestHeaderTheme, { passive: true });
+        window.addEventListener("resize", requestHeaderTheme);
+      }
 
       // Placeholder do WhatsApp e demais pontos de contato: trocar pelo link real na etapa de integração.
       document.querySelectorAll("[data-whatsapp-placeholder], [data-contact-placeholder]").forEach((button) => {
