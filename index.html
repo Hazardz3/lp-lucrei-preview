@@ -63,12 +63,12 @@
       }
 
       .section-shell {
-        width: min(1120px, calc(100% - 32px));
+        width: min(1240px, calc(100% - 32px));
         margin-inline: auto;
       }
 
       .hero-shell {
-        width: min(1288px, calc(100% - 32px));
+        width: min(1240px, calc(100% - 32px));
         margin-inline: auto;
       }
 
@@ -489,6 +489,18 @@
         transform: translateY(-2px);
       }
 
+      .primary-cta {
+        background: linear-gradient(135deg, #3d6b4f 0%, #315940 58%, #294d38 100%);
+        box-shadow: 0 16px 38px rgba(49, 89, 64, 0.2), inset 0 1px 0 rgba(250, 249, 246, 0.14);
+        transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+      }
+
+      .primary-cta:hover {
+        background: linear-gradient(135deg, #47795b 0%, #35664b 58%, #2d563f 100%);
+        box-shadow: 0 20px 44px rgba(49, 89, 64, 0.25), inset 0 1px 0 rgba(250, 249, 246, 0.18);
+        transform: translateY(-2px);
+      }
+
       .benefits-cta {
         background: linear-gradient(135deg, #3d6b4f 0%, #335f47 52%, #254b38 100%);
         box-shadow: 0 20px 48px rgba(61, 107, 79, 0.24), inset 0 1px 0 rgba(250, 249, 246, 0.16);
@@ -602,7 +614,7 @@
           <img
             src="assets/lucrei-logo-horizontal.png"
             alt="Lucrei Contabilidade"
-            class="h-10 w-auto max-w-[154px] object-contain"
+            class="h-12 w-auto max-w-[180px] object-contain contrast-125 saturate-110"
           />
         </a>
 
@@ -610,6 +622,7 @@
           <a class="transition hover:text-[#3D6B4F]" href="#contexto">Contexto</a>
           <a class="transition hover:text-[#3D6B4F]" href="#bpo">BPO</a>
           <a class="transition hover:text-[#3D6B4F]" href="#beneficios">Benefícios</a>
+          <a class="transition hover:text-[#3D6B4F]" href="#assessoria-contabil">Assessoria contábil</a>
           <a class="transition hover:text-[#3D6B4F]" href="#lucrei">Lucrei</a>
           <a class="transition hover:text-[#3D6B4F]" href="#servicos">Serviços</a>
           <a class="transition hover:text-[#3D6B4F]" href="#faq">FAQ</a>
@@ -644,6 +657,7 @@
           <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#contexto">Contexto</a>
           <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#bpo">BPO Financeiro</a>
           <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#beneficios">Benefícios</a>
+          <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#assessoria-contabil">Assessoria contábil</a>
           <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#lucrei">Quem é a Lucrei</a>
           <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#servicos">Serviços</a>
           <a class="rounded-md px-3 py-3 hover:bg-[#E7DECD]" href="#faq">Perguntas frequentes</a>
@@ -658,27 +672,27 @@
     <main id="topo">
       <section class="hero-depth hero-sequence overflow-hidden bg-[#FAF9F6] pb-16 pt-20 md:pb-16 md:pt-20">
         <div class="hero-shell grid items-center gap-10 lg:min-h-[calc(100vh-144px)] lg:grid-cols-[0.44fr_0.56fr] lg:gap-8 xl:gap-10">
-          <div class="max-w-[570px]">
+          <div class="w-full max-w-[520px]">
             <div>
-              <p class="hero-kicker mb-5 inline-flex rounded-full border px-[1.05rem] py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-[#3D6B4F]">
+              <p class="hero-kicker mb-4 inline-flex rounded-full border px-[1.05rem] py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-[#3D6B4F]">
                 CONTABILIDADE CONSULTIVA PARA EMPRESAS
               </p>
-              <h1 class="hero-title max-w-[570px] text-4xl font-semibold leading-[1.02] text-[#152A47] md:text-[2.65rem] xl:text-[2.72rem]">
+              <h1 class="hero-title max-w-[520px] text-4xl font-semibold leading-[1.02] text-[#152A47] md:text-[2.65rem] xl:text-[2.72rem]">
                 <span class="block">A sua empresa precisa</span>
                 <span class="block">de uma contabilidade</span>
                 <span class="block">que acompanhe o</span>
                 <span class="block">negócio de verdade.</span>
               </h1>
-              <p class="hero-copy mt-6 max-w-[600px] text-lg font-semibold leading-8 text-[#1F2924]/78 md:text-xl md:leading-9">
+              <p class="hero-copy mt-5 max-w-[520px] text-lg font-semibold leading-8 text-[#1F2924]/78 md:text-xl md:leading-9">
                 Com contabilidade consultiva e BPO Financeiro, a Lucrei apoia empresas que precisam organizar o financeiro e ganhar mais clareza sobre a operação.
               </p>
             </div>
 
-            <div class="hero-actions mt-9 flex justify-center">
+            <div class="hero-actions mt-8 flex justify-center">
               <a
                 href="#contato"
                 data-whatsapp-placeholder
-                class="hero-button hero-button-primary focus-ring inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#315940] to-[#3D6B4F] px-9 py-[1.05rem] text-sm font-semibold text-[#FAF9F6] shadow-[0_18px_42px_rgba(61,107,79,0.2)] hover:from-[#2B503A] hover:to-[#477A5A] sm:w-auto"
+                class="hero-button primary-cta focus-ring inline-flex w-full items-center justify-center rounded-full px-7 py-[1.05rem] text-sm font-semibold text-[#FAF9F6] sm:w-auto"
               >
                 Falar com a Lucrei
               </a>
@@ -697,13 +711,13 @@
       </section>
 
       <section id="contexto" class="context-depth context-sequence py-24 md:py-32 lg:flex lg:min-h-[740px] lg:items-center xl:min-h-[780px]">
-        <div class="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
-          <div class="lg:pr-6">
+        <div class="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
+          <div class="max-w-[500px] lg:pr-4">
             <p class="text-xs font-semibold uppercase text-[#3D6B4F]">Contexto</p>
-            <h2 class="context-title reveal mt-4 max-w-xl text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
+            <h2 class="context-title reveal mt-4 max-w-[500px] text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
               Quando a empresa cresce, o financeiro não pode continuar no improviso.
             </h2>
-            <p class="context-copy reveal mt-6 max-w-xl text-base leading-8 text-[#1F2924]/72">
+            <p class="context-copy reveal mt-5 max-w-[500px] text-base leading-8 text-[#1F2924]/72">
               Muitas empresas seguem vendendo e operando, mas sem a clareza necessária para manter controle real da rotina financeira.
             </p>
           </div>
@@ -743,16 +757,16 @@
 
       <section id="bpo" class="bpo-depth bpo-sequence overflow-hidden py-24 text-[#FAF9F6] md:py-28">
         <div class="section-shell">
-          <div class="max-w-4xl">
+          <div class="max-w-[720px]">
             <h2 class="bpo-title reveal text-4xl font-semibold leading-tight md:text-6xl">
               BPO FINANCEIRO
             </h2>
-            <p class="bpo-subtitle reveal mt-4 max-w-2xl text-xl leading-8 text-[#FAF9F6]/78 md:text-2xl">
+            <p class="bpo-subtitle reveal mt-4 max-w-[720px] text-xl leading-8 text-[#FAF9F6]/78 md:text-2xl">
               O que o BPO coloca em ordem no dia a dia.
             </p>
           </div>
 
-          <div class="bpo-services mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="bpo-services mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             <article class="bpo-card reveal min-h-[196px] rounded-lg p-7">
               <span class="text-xs font-semibold text-[#C9A84C]">01</span>
               <h3 class="mt-5 text-xl font-semibold">Contas a pagar e receber</h3>
@@ -797,11 +811,11 @@
             </article>
           </div>
 
-          <div class="bpo-action reveal mt-12 flex justify-center">
+          <div class="bpo-action reveal mt-10 flex justify-center">
             <a
               href="#contato"
               data-whatsapp-placeholder
-              class="bpo-cta button-lift focus-ring inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-[#07182A]"
+              class="primary-cta focus-ring inline-flex items-center justify-center rounded-full px-7 py-4 text-sm font-semibold uppercase tracking-[0.08em] text-[#FAF9F6]"
             >
               QUERO ENTENDER O BPO
             </a>
@@ -818,7 +832,7 @@
             </h2>
           </div>
 
-          <div class="stagger mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="stagger mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <article class="reveal interactive-card rounded-lg border border-[#3D6B4F]/10 bg-white p-6 text-center soft-shadow">
               <span class="mx-auto block h-1 w-10 rounded bg-[#C9A84C]"></span>
               <h3 class="mt-6 text-lg font-semibold text-[#152A47]">Você entende para onde o dinheiro está indo</h3>
@@ -841,14 +855,14 @@
             </article>
           </div>
 
-          <div class="reveal mt-12 flex flex-col items-center justify-center gap-5 text-center">
+          <div class="reveal mt-10 flex flex-col items-center justify-center gap-5 text-center">
             <p class="max-w-2xl text-base leading-8 text-[#1F2924]/70">
               Se o financeiro ainda depende de improviso, a primeira conversa já ajuda a mapear onde falta controle.
             </p>
             <a
               href="#contato"
               data-whatsapp-placeholder
-              class="benefits-cta button-lift focus-ring inline-flex items-center justify-center rounded-full px-9 py-5 text-base font-semibold text-[#FAF9F6]"
+              class="primary-cta focus-ring inline-flex items-center justify-center rounded-full px-7 py-5 text-base font-semibold text-[#FAF9F6]"
             >
               Conversar sobre meu financeiro
             </a>
@@ -857,19 +871,19 @@
       </section>
 
       <section id="assessoria-contabil" class="light-depth py-20 md:py-28">
-        <div class="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
-          <div class="reveal lg:flex lg:h-full lg:flex-col lg:justify-center lg:pr-6">
+        <div class="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
+          <div class="reveal w-full max-w-[500px] lg:flex lg:h-full lg:flex-col lg:justify-center lg:pr-4">
             <p class="text-xs font-semibold uppercase tracking-[0.12em] text-[#3D6B4F]">Assessoria Contábil</p>
-            <h2 class="mt-4 max-w-xl text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
+            <h2 class="mt-4 max-w-[500px] text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
               Assessoria contábil para manter sua empresa organizada e em dia.
             </h2>
-            <p class="mt-5 max-w-xl text-base leading-8 text-[#1F2924]/68">
+            <p class="mt-5 max-w-[500px] text-base leading-8 text-[#1F2924]/68">
               Da apuração de impostos ao acompanhamento das obrigações, a Lucrei cuida da rotina contábil e dá suporte ao empresário no dia a dia.
             </p>
             <a
               href="#contato"
               data-whatsapp-placeholder
-              class="button-lift focus-ring mx-auto mt-8 flex w-full items-center justify-center rounded-full bg-[#3D6B4F] px-9 py-4 text-sm font-semibold text-[#FAF9F6] shadow-[0_18px_42px_rgba(61,107,79,0.18)] hover:bg-[#315940] sm:w-auto"
+              class="primary-cta focus-ring mx-auto mt-8 flex w-full items-center justify-center rounded-full px-7 py-4 text-sm font-semibold text-[#FAF9F6] sm:w-auto"
             >
               Preciso de assessoria contábil
             </a>
@@ -912,7 +926,7 @@
         <div class="section-shell grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-stretch lg:gap-12">
           <div class="reveal flex flex-col justify-center lg:pr-6">
             <p class="text-xs font-semibold uppercase text-[#C9A84C]">Quem é a Lucrei</p>
-            <h2 class="mt-4 text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
+            <h2 class="mt-4 max-w-[520px] text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
               Uma contabilidade que vai além da rotina operacional.
             </h2>
 
@@ -946,15 +960,16 @@
                   <h3 class="mt-3 text-2xl font-semibold leading-tight">À frente da Lucrei Contabilidade</h3>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
-                  <div class="grid aspect-[3/4] place-items-center rounded-md border border-[#FAF9F6]/12 bg-[#FAF9F6]/8">
-                    <span class="text-4xl font-semibold text-[#C9A84C]">K</span>
+                  <div class="aspect-[3/4] overflow-hidden rounded-md border border-[#FAF9F6]/12 bg-[#FAF9F6]/8">
+                    <img src="assets/karen.jpg" alt="Karen, sócia da Lucrei Contabilidade" class="h-full w-full object-cover object-top" />
                   </div>
-                  <div class="grid aspect-[3/4] place-items-center rounded-md border border-[#FAF9F6]/12 bg-[#FAF9F6]/8">
-                    <span class="text-4xl font-semibold text-[#C9A84C]">S</span>
+                  <div class="aspect-[3/4] overflow-hidden rounded-md border border-[#FAF9F6]/12 bg-[#FAF9F6]/8">
+                    <img src="assets/simone.jpg" alt="Simone, sócia da Lucrei Contabilidade" class="h-full w-full object-cover object-top" />
                   </div>
                 </div>
-                <p class="text-sm leading-7 text-[#FAF9F6]/68">
-                  Área preparada para fotos profissionais futuras das sócias, mantendo presença humana sem transformar a seção em peça promocional.
+                <p class="text-sm leading-7 text-[#FAF9F6]/72">
+                  <span class="block font-semibold text-[#FAF9F6]">Karen e Simone conduzem a Lucrei<span class="block">com uma atuação próxima e estratégica</span></span>
+                  <span class="mt-1 block">Unindo rotina contábil, organização e suporte ao empresário no acompanhamento do negócio.</span>
                 </p>
               </div>
             </div>
@@ -964,14 +979,14 @@
 
       <section id="servicos" class="light-depth py-20 md:py-28">
         <div class="section-shell">
-          <div class="reveal max-w-3xl">
+          <div class="reveal max-w-[720px]">
             <p class="text-xs font-semibold uppercase text-[#3D6B4F]">Serviços complementares</p>
             <h2 class="mt-4 text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
               Outros serviços que apoiam a estrutura do seu negócio.
             </h2>
           </div>
 
-          <div class="stagger mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="stagger mt-10 grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <article class="reveal soft-hover rounded-lg border border-[#3D6B4F]/10 bg-white/88 p-5 shadow-[0_16px_38px_rgba(21,42,71,0.06)]">
               <div class="grid h-11 w-11 place-items-center rounded-md bg-[#E7DECD] text-[#3D6B4F]">
                 <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 18V6"/><path d="M8 18V9"/><path d="M12 18V4"/><path d="M16 18v-7"/><path d="M20 18V8"/><path d="M3 20h18"/></svg>
@@ -1025,32 +1040,36 @@
               href="https://lucrei.certificadorapadrao.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              class="reveal soft-hover cursor-pointer rounded-lg border border-[#C9A84C]/35 bg-[#152A47] p-5 text-[#FAF9F6] shadow-[0_16px_38px_rgba(21,42,71,0.16)] transition duration-200 hover:-translate-y-1 hover:border-[#C9A84C]/60 hover:shadow-[0_20px_44px_rgba(21,42,71,0.22)]"
+              class="reveal soft-hover relative cursor-pointer rounded-lg border border-[#C9A84C]/35 bg-[#152A47] p-5 text-[#FAF9F6] shadow-[0_16px_38px_rgba(21,42,71,0.16)] transition duration-200 hover:-translate-y-1 hover:border-[#C9A84C]/60 hover:shadow-[0_20px_44px_rgba(21,42,71,0.22)]"
             >
               <div class="grid h-11 w-11 place-items-center rounded-md bg-[#C9A84C] text-[#152A47]">
                 <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3"/><path d="M5 10h14v11H5z"/><path d="M12 15v2"/></svg>
               </div>
               <h3 class="mt-5 font-semibold text-[#FAF9F6]">Certificado digital</h3>
               <p class="mt-3 text-sm leading-6 text-[#FAF9F6]/68">Apoio para emissão e renovação do certificado digital com mais praticidade.</p>
+              <span class="absolute right-5 top-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-[#C9A84C]">
+                Acessar site
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v6H5V5h6"/></svg>
+              </span>
             </a>
           </div>
         </div>
       </section>
 
       <section id="faq" class="faq-sequence warm-depth py-20 md:py-28">
-        <div class="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div class="reveal">
+        <div class="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-14">
+          <div class="reveal flex max-w-[500px] flex-col items-start">
             <p class="text-xs font-semibold uppercase text-[#C9A84C]">FAQ</p>
             <h2 class="mt-4 text-3xl font-semibold leading-tight text-[#152A47] md:text-5xl">
               Dúvidas frequentes
             </h2>
-            <p class="reveal mt-6 text-base leading-8 text-[#1F2924]/68">
+            <p class="reveal mt-5 text-base leading-8 text-[#1F2924]/68">
               Respostas rápidas para entender como a Lucrei pode apoiar sua empresa.
             </p>
             <a
               href="#contato"
               data-whatsapp-placeholder
-              class="reveal button-lift focus-ring mt-8 inline-flex items-center justify-center rounded-full bg-[#3D6B4F] px-7 py-4 text-sm font-semibold text-[#FAF9F6] shadow-[0_16px_36px_rgba(61,107,79,0.16)] hover:bg-[#315940]"
+              class="reveal primary-cta focus-ring mt-8 inline-flex self-center items-center justify-center rounded-full px-7 py-4 text-sm font-semibold text-[#FAF9F6]"
             >
               Conversar com a Lucrei
             </a>
@@ -1063,16 +1082,16 @@
                 <span class="text-xl text-[#3D6B4F]" data-faq-icon>-</span>
               </button>
               <div id="faq-1" class="px-5 pb-5 text-sm leading-7 text-[#1F2924]/65" data-faq-panel>
-                Para empresas que já operam, vendem e precisam organizar melhor contas a pagar, recebimentos, caixa e informações financeiras.
+                Para empresas que já operam e para empresas em fase de estruturação, quando existe necessidade de organizar contas a pagar, recebimentos, caixa e informações financeiras da rotina.
               </div>
             </article>
             <article class="faq-item reveal rounded-lg border border-[#3D6B4F]/10 bg-white">
               <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left" type="button" aria-expanded="false" aria-controls="faq-2" data-faq-button>
-                <span class="font-semibold text-[#152A47]">A Lucrei atende apenas empresas de serviço?</span>
+                <span class="font-semibold text-[#152A47]">A Lucrei atende qualquer tipo de empresa?</span>
                 <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
               </button>
               <div id="faq-2" class="hidden px-5 pb-5 text-sm leading-7 text-[#1F2924]/65" data-faq-panel>
-                A comunicação conversa principalmente com empresas de serviço, mas a Lucrei pode avaliar outros negócios que precisam de apoio financeiro e contábil.
+                Sim. A Lucrei atende empresas de diferentes segmentos e momentos, avaliando as necessidades contábeis e financeiras de cada negócio para direcionar o atendimento mais adequado.
               </div>
             </article>
             <article class="faq-item reveal rounded-lg border border-[#3D6B4F]/10 bg-white">
@@ -1081,7 +1100,7 @@
                 <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
               </button>
               <div id="faq-3" class="hidden px-5 pb-5 text-sm leading-7 text-[#1F2924]/65" data-faq-panel>
-                A troca pode ser conduzida com orientação para organizar documentos, acessos e informações necessárias para uma transição mais tranquila.
+                A Lucrei conduz esse processo com orientação e acompanhamento, entrando em contato com o contador anterior e organizando os documentos, acessos e informações necessárias para uma transição mais tranquila.
               </div>
             </article>
             <article class="faq-item reveal rounded-lg border border-[#3D6B4F]/10 bg-white">
@@ -1090,7 +1109,7 @@
                 <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
               </button>
               <div id="faq-4" class="hidden px-5 pb-5 text-sm leading-7 text-[#1F2924]/65" data-faq-panel>
-                O escopo pode envolver contas a pagar e receber, conciliação bancária, fluxo de caixa, relatórios e apoio à leitura financeira.
+                O BPO pode incluir a organização de contas a pagar e receber, conciliação bancária, fluxo de caixa, relatórios financeiros e apoio à leitura dos números da operação.
               </div>
             </article>
             <article class="faq-item reveal rounded-lg border border-[#3D6B4F]/10 bg-white">
@@ -1099,7 +1118,7 @@
                 <span class="text-xl text-[#3D6B4F]" data-faq-icon>+</span>
               </button>
               <div id="faq-5" class="hidden px-5 pb-5 text-sm leading-7 text-[#1F2924]/65" data-faq-panel>
-                Clique em um dos botões de conversa para falar com a equipe e explicar o momento da sua empresa.
+                Você pode falar com a equipe da Lucrei pelo WhatsApp e pelos canais de contato da página para entender qual apoio faz mais sentido para sua empresa.
               </div>
             </article>
           </div>
@@ -1119,7 +1138,7 @@
             <a
               href="#contato"
               data-whatsapp-placeholder
-              class="button-lift focus-ring mt-8 inline-flex items-center justify-center rounded-full bg-[#3D6B4F] px-9 py-5 text-sm font-semibold uppercase tracking-[0.08em] text-[#FAF9F6] shadow-[0_18px_42px_rgba(61,107,79,0.18)] hover:bg-[#315940]"
+              class="primary-cta focus-ring mt-8 inline-flex items-center justify-center rounded-full px-7 py-5 text-sm font-semibold uppercase tracking-[0.08em] text-[#FAF9F6]"
             >
               CONVERSAR COM EQUIPE
             </a>
